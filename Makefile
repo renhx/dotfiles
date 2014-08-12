@@ -1,13 +1,17 @@
 DOTFILES = $(shell pwd)
 
 help:
-	@echo "make [all, bash, fish, vim, git, homebrew, iterm, alfred, ruby]"
+	@echo "make [all, bash, bash-append, fish, vim, git, homebrew, iterm, alfred, ruby]"
 
 all: bash fish vim git homebrew iterm alfred ruby
 
 bash:
 	ln -s -i ${DOTFILES}/.bash_profile ${HOME}/.bash_profile
 	ln -s -i ${DOTFILES}/.bashrc ${HOME}/.bashrc
+
+bash-append:
+	echo "if [ -f ${DOTFILES}/.bash_profile ]; then . ${DOTFILES}/.bash_profile; fi" >> ~/.bash_profile
+	echo "if [ -f ${DOTFILES}/.bashrc ]; then . ${DOTFILES}/.bashrc; fi" >> ~/.bash_profile
 
 fish:
 	if [ ! -d ${HOME}/.config/fish/ ]; then \
