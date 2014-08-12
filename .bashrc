@@ -30,9 +30,11 @@ alias gib='git branch'
 function gii() { curl http://www.gitignore.io/api/$@ ;}
 
 # MacVim
-#alias vim='env LANG=ja_JP.UTF-8 /Applications/MacVim.app/Contents/MacOS/Vim "$@"'
-alias vim='env LANG=ja_JP.UTF-8 mvim -v "$@"'
-alias vimm='vim --remote-tab-silent'
+if which mvim >/dev/null 2>&1; then
+  #alias vim='env LANG=ja_JP.UTF-8 /Applications/MacVim.app/Contents/MacOS/Vim "$@"'
+  alias vim='env LANG=ja_JP.UTF-8 mvim -v "$@"'
+  alias vimm='vim --remote-tab-silent'
+fi
 
 # for bash_completion
 if which brew >/dev/null 2>&1; then
