@@ -7,6 +7,6 @@ export PATH="$HOME/.rbenv/bin:$PATH"
 export CLICOLOR=1
 export LSCOLORS=DxGxcxdxCxegedabagacad
 
-eval "$(rbenv init -)"
+if which rbenv >/dev/null 2>&1; then eval "$(rbenv init -)"; fi
 if [ -f ~/.bashrc ]; then . ~/.bashrc; fi
 if [ -f ~/.local-bashrc ]; then . ~/.local-bashrc; fi

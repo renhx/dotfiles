@@ -35,6 +35,8 @@ alias vim='env LANG=ja_JP.UTF-8 mvim -v "$@"'
 alias vimm='vim --remote-tab-silent'
 
 # for bash_completion
-if [ -f `brew --prefix`/etc/bash_completion ]; then
-  source `brew --prefix`/etc/bash_completion
+if which brew >/dev/null 2>&1; then
+  if [ -f `brew --prefix`/etc/bash_completion ]; then
+    source `brew --prefix`/etc/bash_completion
+  fi
 fi
