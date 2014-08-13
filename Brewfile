@@ -18,6 +18,7 @@ install lua
 install luajit
 install go
 install rbenv ruby-build
+install pyenv
 install nodebrew
 
 #misc.
@@ -27,6 +28,7 @@ install hub
 install tree
 install watch
 install wget
+install htop
 install macvim --with-cscope --with-luajit --HEAD # ln -s /usr/local/Cellar/macvim/HEAD/MacVim.app /Applications
 install openssl
 tap peco/peco
