@@ -25,11 +25,11 @@ inoremap <C-j> <Esc>
 vnoremap <C-j> <Esc>
 
 " カーソル下にNORのまま空行挿入
-nnoremap <Space><Space> :<C-u>call append(expand('.'), '')<Cr>j
+nnoremap <Space><Space> o<ESC>
 
 "JKで上下半画面スクロール
-nmap <silent> J <C-d>
-nmap <silent> K <C-u>
+nmap J <C-d>
+nmap K <C-u>
 
 "<space>j, <space>kで画面送り
 noremap <Space>j <C-f>
