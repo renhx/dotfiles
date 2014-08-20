@@ -1,0 +1,39 @@
+"------------------------------------------------
+" search
+"------------------------------------------------
+set wrapscan                                      " 最後まで検索したら先頭へ戻る
+set ignorecase                                    " 大文字小文字無視
+set smartcase                                     " 検索文字列に大文字が含まれている場合は区別して検索する
+set incsearch                                     " インクリメンタルサーチ
+set hlsearch                                      " 検索文字をハイライト
+
+"------------------------------------------------
+" mapping
+"------------------------------------------------
+
+"Escの2回押しでハイライト消去
+nnoremap <Esc><Esc> :noh<CR>
+
+" <C-j>をESCの代わりに
+nnoremap <C-j><C-j> :noh<CR>
+inoremap <C-j> <Esc>
+vnoremap <C-j> <Esc>
+
+" カーソル下にNORのまま空行挿入
+nnoremap <Space><Space> :<C-u>call append(expand('.'), '')<Cr>j
+
+"JKで上下半画面スクロール
+nmap <silent> J <C-d>
+nmap <silent> K <C-u>
+
+"<space>j, <space>kで画面送り
+noremap <Space>j <C-f>
+noremap <Space>k <C-b>
+
+"C-a C-aで全選択
+inoremap <C-a><C-a> <Esc>ggvG$
+nnoremap <C-a><C-a> ggvG$
+
+" 連続インデント
+vnoremap < <gv
+vnoremap > >gv

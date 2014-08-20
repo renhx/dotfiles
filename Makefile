@@ -1,7 +1,7 @@
 DOTFILES = $(shell pwd)
 
 help:
-	@echo "make [all, bash, bash-append, fish, vim, git, homebrew, iterm, alfred, ruby]"
+	@echo "make [all, bash, bash-append, fish, vim, xvim, git, homebrew, iterm, alfred, ruby]"
 
 all: bash fish vim git homebrew iterm alfred ruby
 
@@ -25,6 +25,9 @@ vim:
 		curl https://raw.githubusercontent.com/Shougo/neobundle.vim/master/bin/install.sh | sh; \
 	fi
 	ln -s -i ${DOTFILES}/.vimrc ${HOME}/.vimrc
+
+xvim:
+	ln -s -i ${DOTFILES}/.xvimrc ${HOME}/.xvimrc
 
 git:
 	ln -s -i ${DOTFILES}/dot.gitignore ${HOME}/.gitignore
