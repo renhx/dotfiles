@@ -180,8 +180,8 @@ syntax enable                                     " ハイライト on
 set number				                                " 行番号をつける
 set showmatch         			                      " 括弧の対応をハイライト
 " set list              			                    " 不可視文字表示
-set listchars=tab:>.,trail:_,extends:>,precedes:<                           " 不可視文字の表示形式
-highlight ZenkakuSpace cterm=underline ctermfg=lightblue guibg=darkgray     " 全角スペースの表示
+set listchars=tab:»-,trail:-,extends:»,precedes:«,eol:$ " 不可視文字の表示形式
+highlight ZenkakuSpace cterm=underline ctermfg=lightblue guibg=darkgray
 match ZenkakuSpace /　/
 set cursorline				                            " カーソル行をハイライト
 augroup cch				                                " カレントウィンドウにのみ罫線を引く
