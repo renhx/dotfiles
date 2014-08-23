@@ -112,11 +112,11 @@ NeoBundleCheck
 set nocompatible                                  " viとの互換をオフ
 filetype indent on                                " ファイルタイプ判定をon
 filetype plugin on
-syntax on  			                                  " シンタックスハイライトをつける
-set clipboard=unnamed,autoselect	                " clipboard共有を有効にする, +clipboardになっていること
+syntax on                                         " シンタックスハイライトをつける
+set clipboard=unnamed,autoselect                  " clipboard共有を有効にする, +clipboardになっていること
 set shell=bash
 
-set autoread                     	                " 他で書き換えられたら自動で読み直す
+set autoread                                      " 他で書き換えられたら自動で読み直す
 augroup checktime                                 " 書き換えチェックの間隔を短く
   autocmd!
   autocmd BufEnter        * silent! checktime
@@ -125,13 +125,13 @@ augroup checktime                                 " 書き換えチェックの�
   autocmd CursorHoldI     * silent! checktime
 augroup END
 
-set noswapfile				                            " スワップファイル作らない
-set backspace=indent,eol,start   	                " バックスペースでなんでも消せるように
-set notitle				                                " vimを使ってくれてありがとう
-set mouse=a				                                " ターミナルでマウスを使用できるようにする
+set noswapfile                                    " スワップファイル作らない
+set backspace=indent,eol,start                    " バックスペースでなんでも消せるように
+set notitle                                       " vimを使ってくれてありがとう
+set mouse=a                                       " ターミナルでマウスを使用できるようにする
 set guioptions+=a
 set ttymouse=xterm2
-set ttyfast				                                " 高速ターミナル接続を行う
+set ttyfast                                       " 高速ターミナル接続を行う
 set formatoptions-=ro                             " コメント行からの改行で、次の行頭にコメントが挿入されないように
 nnoremap Q <Nop>
 
@@ -163,13 +163,13 @@ set ttimeoutlen=10
 " indent
 "------------------------------------------------
 
-set autoindent   			                            " 自動でインデント
-set smartindent  			                            " 新しい行を開始したときに、新しい行のインデントを現在行と同じ量にする。
-set cindent      			                            " Cプログラムファイルの自動インデントを始める
-set expandtab 				                            " タブ入力を複数の空白入力に置き換える
-set tabstop=2 				                            " 画面上でタブ文字が占める幅
-set shiftwidth=2 			                            " 自動インデントでずれる幅
-set softtabstop=2 	                              " 連続した空白に対してタブキーやバックスペースキーでカーソルが動く幅
+set autoindent                                    " 自動でインデント
+set smartindent                                   " 新しい行を開始したときに、新しい行のインデントを現在行と同じ量にする。
+set cindent                                       " Cプログラムファイルの自動インデントを始める
+set expandtab                                     " タブ入力を複数の空白入力に置き換える
+set tabstop=2                                     " 画面上でタブ文字が占める幅
+set shiftwidth=2                                  " 自動インデントでずれる幅
+set softtabstop=2                                 " 連続した空白に対してタブキーやバックスペースキーでカーソルが動く幅
 
 
 "------------------------------------------------
@@ -177,14 +177,14 @@ set softtabstop=2 	                              " 連続した空白に対し�
 "------------------------------------------------
 
 syntax enable                                     " ハイライト on
-set number				                                " 行番号をつける
-set showmatch         			                      " 括弧の対応をハイライト
-" set list              			                    " 不可視文字表示
+set number                                        " 行番号をつける
+set showmatch                                     " 括弧の対応をハイライト
+" set list                                        " 不可視文字表示
 set listchars=tab:»-,trail:-,extends:»,precedes:«,eol:$ " 不可視文字の表示形式
 highlight ZenkakuSpace cterm=underline ctermfg=lightblue guibg=darkgray
 match ZenkakuSpace /　/
-set cursorline				                            " カーソル行をハイライト
-augroup cch				                                " カレントウィンドウにのみ罫線を引く
+set cursorline                                    " カーソル行をハイライト
+augroup cch                                       " カレントウィンドウにのみ罫線を引く
   autocmd! cch
   autocmd WinLeave * set nocursorline
   autocmd WinEnter,BufRead * set cursorline
@@ -206,8 +206,8 @@ set hlsearch                                      " 検索文字をハイライ�
 " statusLine
 "------------------------------------------------
 
-set laststatus=2 			                            " 常にステータスラインを表示
-set ruler	 			                                  " カーソルが何行目の何列目に置かれているかを表示する
+set laststatus=2                                  " 常にステータスラインを表示
+set ruler                                         " カーソルが何行目の何列目に置かれているかを表示する
 
 
 "------------------------------------------------
@@ -224,7 +224,7 @@ set encoding=utf-8                                " デフォルトエンコー�
 " color
 "------------------------------------------------
 
-colorscheme monokai                                " カラースキーマをmonokaiにする
+colorscheme monokai                               " カラースキーマをmonokaiにする
 set t_Co=256                                      " 256色にする
 set t_Sf=[3%dm
 set t_Sb=[4%dm
@@ -234,11 +234,11 @@ set t_Sb=[4%dm
 " complete
 "------------------------------------------------
 
-set wildmenu                                        " コマンド補完を強化
-set wildchar=<tab>                                  " コマンド補完を開始するキー
-set wildmode=list:full                              " リスト表示，最長マッチ
-set history=1000                                    " コマンド・検索パターンの履歴数
-set complete+=k                                     " 補完に辞書ファイル追加
+set wildmenu                                      " コマンド補完を強化
+set wildchar=<tab>                                " コマンド補完を開始するキー
+set wildmode=list:full                            " リスト表示，最長マッチ
+set history=1000                                  " コマンド・検索パターンの履歴数
+set complete+=k                                   " 補完に辞書ファイル追加
 
 
 "------------------------------------------------
@@ -341,7 +341,7 @@ let g:neocomplete#keyword_patterns['default'] = '\h\w*'
 let g:neocomplete#sources#omni#input_patterns.perl = '\h\w*->\h\w*\|\h\w*::'
 
 " ファイルタイプ別、使用するdictionary
-let g:neocomplete#sources#dictionary#dictionaries = {               
+let g:neocomplete#sources#dictionary#dictionaries = {
     \ 'default' : '',
     \ 'vimshell' : $HOME.'/.vimshell_hist',
     \ 'scheme' : $HOME.'/.gosh_completions',
