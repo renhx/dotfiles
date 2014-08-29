@@ -38,6 +38,7 @@ install migemogrep
 #Pentest
 install sqlmap
 install nmap
+install hping
 install dex2jar
 install apktool
 #procyon
