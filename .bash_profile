@@ -8,7 +8,7 @@ export CLICOLOR=1
 export LSCOLORS=DxGxcxdxCxegedabagacad
 
 export PYENV_ROOT=/usr/local/opt/pyenv
-if which pyenv > /dev/null; then eval "$(pyenv init -)"; fi
+if which pyenv >/dev/null 2>&1; then eval "$(pyenv init -)"; fi
 
 if which rbenv >/dev/null 2>&1; then eval "$(rbenv init -)"; fi
 if [ -f ~/.bashrc ]; then . ~/.bashrc; fi
