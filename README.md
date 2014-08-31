@@ -6,5 +6,7 @@ make
 ```
 
 ## Scripts
-* install_vim_to_homedir.sh
-  * 非root環境で~/usr/local/以下に+if_luaなvimをインストール
+* install_vim_to_home.sh
+  * ~/usr/local/以下に+if_luaなvimをインストール
+* install_tmux_to_home.sh
+  * ~/usr/local/以下にtmuxをインストール
