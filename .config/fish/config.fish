@@ -62,6 +62,9 @@ end
 alias vim='env LANG=ja_JP.UTF-8 mvim -v $ARGV'
 alias vimm='vim --remote-tab-silent'
 
+# tmux
+alias tm='tmux'
+alias ta='tmux a'
 
 #------------------------------
 # KeyBindings

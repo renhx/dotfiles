@@ -1,9 +1,9 @@
 DOTFILES = $(shell pwd)
 
 help:
-	@echo "make [all, bash, bash-append, fish, vim, xvim, git, homebrew, iterm, alfred, ruby]"
+	@echo "make [all, bash, bash-append, fish, tmux, vim, xvim, git, homebrew, iterm, alfred, ruby]"
 
-all: bash fish vim git homebrew iterm alfred ruby
+all: bash fish tmux vim git homebrew iterm alfred ruby
 
 bash:
 	ln -s -i ${DOTFILES}/.bash_profile ${HOME}/.bash_profile
@@ -19,6 +19,9 @@ fish:
 	fi
 	ln -s -i ${DOTFILES}/.config/fish/config.fish ${HOME}/.config/fish/config.fish
 	@echo "YOU NEED TO RUN: echo '/usr/local/bin/fish' >> /etc/shells && chsh -s /usr/local/bin/fish"
+
+tmux:
+	ln -s -i ${DOTFILES}/.tmux.conf ${HOME}/.tmux.conf
 
 vim:
 	if [ ! -d ${HOME}/.vim/bundle/neobundle.vim/ ]; then \

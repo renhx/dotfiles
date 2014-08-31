@@ -101,6 +101,7 @@ NeoBundle 'mrocklin/maude.vim', {'rev' : '9e28f9'} " Maude-Lang, 9e28f9:ファ�
 NeoBundle 'nathanaelkane/vim-indent-guides'        " インデント可視化
 NeoBundle 'dag/vim-fish'                           " Fish Shell
 NeoBundle 'thinca/vim-fontzoom'
+NeoBundle 'zaiste/tmux.vim'
 
 NeoBundleCheck
 

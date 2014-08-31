@@ -36,6 +36,12 @@ if which mvim >/dev/null 2>&1; then
   alias vimm='vim --remote-tab-silent'
 fi
 
+# tmux
+if which tmux >/dev/null 2>&1; then 
+  alias tm='tmux'
+  alias ta='tmux a'
+fi
+
 # for bash_completion
 if which brew >/dev/null 2>&1; then
   if [ -f `brew --prefix`/etc/bash_completion ]; then
