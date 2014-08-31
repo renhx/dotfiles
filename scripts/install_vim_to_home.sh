@@ -6,7 +6,7 @@
 if [ ! -d $HOME/usr/local/ ]; then
   mkdir -p $HOME/usr/local/
 fi
-mkdir tmp_install_vim_to_homedir && cd tmp_install_vim_to_homedir
+mkdir tmp_install_vim_to_home && cd tmp_install_vim_to_home
 
 #install lua
 wget http://www.lua.org/ftp/lua-5.2.3.tar.gz
@@ -21,5 +21,7 @@ cd vim
 LDFLAGS="-L$HOME/usr/local/lib/" ./configure --prefix=$HOME/usr/local --with-local-dir=$HOME/usr/local --with-features=huge --enable-multibyte --disable-darwin --disable-selinux --enable-pythoninterp --enable-luainterp=yes --with-lua-prefix=$HOME/usr/local --enable-cscope --enable-perlinterp --enable-fail-if-missing && make && make install
 cd ..
 
+echo '--------------------------'
 echo 'YOU NEED TO ADD "export PATH=$HOME/usr/local/bin/:$PATH"'
 echo 'YOU NEED TO ADD "export LD_LIBRARY_PATH=$HOME/usr/local/lib/:$LD_LIBRARY_PATH"'
+echo '--------------------------'
