@@ -142,6 +142,7 @@ nnoremap Q <Nop>
 set showcmd                                       " 右下にコマンド表示
 set nowrap                                        " 行折り返しのoff
 set whichwrap=b,s,<,>,[,]                         " 行頭, 行末での左右移動
+set scrolloff=3                                   " スクロール時の画面端マージン
 command! DiffOrig vert new | set bt=nofile | r # | 0d_ | diffthis | wincmd p | diffthis " 編集前と現時点のdiff http://nanasi.jp/articles/howto/diff/diff-original-file.html
 
 " % でのdo...end移動など対応(標準添付)
@@ -299,6 +300,9 @@ nnoremap <C-a><C-a> ggvG$
 " 連続インデント
 vnoremap < <gv
 vnoremap > >gv
+
+" 不可視文字の表示切り替え
+noremap <Space>c :set list!<CR>
 
 ",Tでテンプレート展開、Tabで選択
 nnoremap <silent> ,T :<C-u>Template
@@ -462,6 +466,11 @@ let g:nerdtree_tabs_open_on_console_startup = 1
 let NERDTreeShowBookmarks=1
 "let NERDTreeMapOpenInTab='<ENTER>'
 
+" ReMapping
+let NERDTreeMapJumpNextSibling = 'J'
+let NERDTreeMapJumpPrevSibling = 'K'
+let NERDTreeMapJumpLastChild = '<C-j>'
+let NERDTreeMapJumpFirstChild = '<C-k>'
 
 "------------------------------------------------
 " YankRing
@@ -679,6 +688,11 @@ command! -bar ChromeReload silent !osascript -e 'tell application "Google Chrome
 let g:gitgutter_eager = 0
 let g:gitgutter_realtime = 0
 nnoremap <Space>gg :<C-u>GitGutterToggle<CR>
+nnoremap <Space>gs :<C-u>GitGutterSignsToggle<CR>
+nnoremap <Space>gh :<C-u>GitGutterLineHighlightsToggle<CR>
+nnoremap <Space>gn :<C-u>GitGutterNextHunk<CR>
+nnoremap <Space>gp :<C-u>GitGutterPrevHunk<CR>
+
 " vim-emoji
 " silent! if emoji#available()
   " let g:gitgutter_sign_added = emoji#for('small_blue_diamond')
