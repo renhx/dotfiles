@@ -46,6 +46,7 @@ NeoBundle 'Shougo/vimproc', {
 NeoBundle 'sickill/vim-monokai'
 NeoBundle 'junegunn/seoul256.vim'
 NeoBundle 'altercation/vim-colors-solarized'
+NeoBundle 'chriskempson/vim-tomorrow-theme'
 
 "------------------------------------------------
 " Plugins
@@ -89,6 +90,7 @@ NeoBundle 't9md/vim-quickhl'                       " カーソル箇所の単語
 NeoBundle 'AndrewRadev/splitjoin.vim'              " (html:1行のタグを複数行に整形したり、複数行を1行にまとめたり), ruby, python
 NeoBundle 'AndrewRadev/linediff.vim'               " 行単位diff
 NeoBundle 'junegunn/goyo.vim'                      " Distraction-free writing in Vim.
+NeoBundle 'junegunn/limelight.vim'                 " Hyperfocus-writing in Vim.
 " NeoBundle 'junegunn/vim-easy-align'
 NeoBundle 'tpope/vim-surround'                     " cs'/, ds'
 NeoBundle 'rcmdnk/vim-markdown'
@@ -102,6 +104,7 @@ NeoBundle 'nathanaelkane/vim-indent-guides'        " インデント可視化
 NeoBundle 'dag/vim-fish'                           " Fish Shell
 NeoBundle 'thinca/vim-fontzoom'
 NeoBundle 'zaiste/tmux.vim'
+NeoBundle 'junegunn/vim-emoji'
 
 NeoBundleCheck
 
@@ -676,6 +679,13 @@ command! -bar ChromeReload silent !osascript -e 'tell application "Google Chrome
 let g:gitgutter_eager = 0
 let g:gitgutter_realtime = 0
 nnoremap <Space>gg :<C-u>GitGutterToggle<CR>
+" vim-emoji
+" silent! if emoji#available()
+  " let g:gitgutter_sign_added = emoji#for('small_blue_diamond')
+  " let g:gitgutter_sign_modified = emoji#for('small_orange_diamond')
+  " let g:gitgutter_sign_removed = emoji#for('small_red_triangle')
+  " let g:gitgutter_sign_modified_removed = emoji#for('collision')
+" endif
 
 "------------------------------------------------
 " QuickHL
@@ -697,20 +707,42 @@ nmap <Space>ss :SplitjoinSplit<cr>
 
 let g:goyo_width = 90
 
-function! s:goyo_before()
+function! s:goyo_enter()
+  silent !tmux set status off
+  set noshowmode
+  set noshowcmd
+  set scrolloff=999
+  
   NERDTreeClose
-  call lightline#disable()
-  set statusline=
+  Limelight
+  GitGutterDisable
+  " call lightline#disable()
+  " set statusline=
   " set wrap
 endfunction
 
-function! s:goyo_after()
+function! s:goyo_leave()
+  silent !tmux set status on
+  set showmode
+  set showcmd
+  set scrolloff=3
+  
   NERDTree
-  call lightline#enable()
+  Limelight!
+  GitGutterEnable
+  " call lightline#enable()
 endfunction
 
-let g:goyo_callbacks = [function('s:goyo_before'), function('s:goyo_after')]
+autocmd! User GoyoEnter
+autocmd! User GoyoLeave
+autocmd  User GoyoEnter nested call <SID>goyo_enter()
+autocmd  User GoyoLeave nested call <SID>goyo_leave()
 
+
+"------------------------------------------------
+" limelight.vim
+"------------------------------------------------
+let g:limelight_default_coefficient = 0.8
 
 "------------------------------------------------
 " Markdown
