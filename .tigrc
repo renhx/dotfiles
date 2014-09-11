@@ -1,0 +1,12 @@
+# デフォルトの bind generic G !git gc を無効化する
+bind generic G none
+bind generic g move-first-line
+bind generic G move-last-line
+  
+# Vim風に<C-f>,<C-b>でページ移動
+bind generic <Ctrl-f> scroll-page-down
+bind generic <Ctrl-b> scroll-page-up
+
+# コミットをブラウザで開く(github)
+bind main B !@hub browse -- commit/%(commit)
+bind diff B !@hub browse -- commit/%(commit)

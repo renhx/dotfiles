@@ -1,9 +1,9 @@
 DOTFILES = $(shell pwd)
 
 help:
-	@echo "make [all, bash, bash-append, fish, tmux, vim, xvim, git, homebrew, iterm, alfred, ruby]"
+	@echo "make [all, bash, bash-append, fish, tmux, vim, xvim, git, tig, homebrew, iterm, alfred, ruby]"
 
-all: bash fish tmux vim git homebrew iterm alfred ruby
+all: bash fish tmux vim git tig homebrew iterm alfred ruby
 
 bash:
 	ln -s -i ${DOTFILES}/.bash_profile ${HOME}/.bash_profile
@@ -34,6 +34,9 @@ xvim:
 
 git:
 	ln -s -i ${DOTFILES}/dot.gitignore ${HOME}/.gitignore
+
+tig:
+	ln -s -i ${DOTFILES}/.tigrc ${HOME}/.tigrc
 
 homebrew:
 	#ruby -e "$(curl -fsSL https://raw.github.com/Homebrew/homebrew/go/install)"
