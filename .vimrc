@@ -105,6 +105,7 @@ NeoBundle 'dag/vim-fish'                           " Fish Shell
 NeoBundle 'thinca/vim-fontzoom'
 NeoBundle 'zaiste/tmux.vim'
 NeoBundle 'junegunn/vim-emoji'
+NeoBundle 'sophacles/vim-processing'
 
 NeoBundleCheck
 
@@ -525,9 +526,12 @@ let g:quickrun_config = {
 \       "exec"    : "%c %s",
 \       "outputter" : "browser",
 \       "hook/time/enable" : 0
+\   },
+\   "processing" : {
+\     'command': 'processing-java',
+\     'exec': '%c --sketch=%s:p:h/ --output=/tmp/processing_quickrun --run --force'
 \   }
 \}
-
 
 "------------------------------------------------
 " unite
