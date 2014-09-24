@@ -798,7 +798,9 @@ let g:local_vimrc = {'names':['.local-vimrc'],'hash_fun':'LVRHashOfFile'}
 "------------------------------------------------
 " vim-indent-guides
 "------------------------------------------------
-nnoremap <Space>i :IndentGuidesToggle<cr>
+nnoremap <Space>i :IndentGuidesEnable<CR>:set list<CR>
+nnoremap <Space>I :IndentGuidesDisable<CR>:set nolist<CR>
+
 let g:indent_guides_auto_colors=0
 autocmd VimEnter,Colorscheme * :hi IndentGuidesOdd   ctermbg=236
 autocmd VimEnter,Colorscheme * :hi IndentGuidesEven  ctermbg=236
