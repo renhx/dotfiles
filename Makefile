@@ -22,6 +22,7 @@ fish:
 
 tmux:
 	ln -s -i ${DOTFILES}/.tmux.conf ${HOME}/.tmux.conf
+	ln -s -i ${DOTFILES}/.tmux-login-shell ${HOME}/.tmux-login-shell
 
 vim:
 	if [ ! -d ${HOME}/.vim/bundle/neobundle.vim/ ]; then \

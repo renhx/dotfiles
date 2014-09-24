@@ -6,6 +6,8 @@ upgrade
 install bash-completion
 install fish --HEAD
 install zsh
+install tmux
+install reattach-to-user-namespace
 
 #Fonts
 tap sanemat/font
