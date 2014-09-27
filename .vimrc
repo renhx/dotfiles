@@ -304,6 +304,8 @@ vnoremap > >gv
 
 " 不可視文字の表示切り替え
 noremap <Space>c :set list!<CR>
+" wrapの切り替え
+noremap <Space>w :set wrap!<CR>
 
 ",Tでテンプレート展開、Tabで選択
 nnoremap <silent> ,T :<C-u>Template
