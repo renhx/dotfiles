@@ -651,12 +651,12 @@ aug END
 let g:user_emmet_install_global = 0
 augroup emmet_install
   autocmd!
-  autocmd FileType html,css EmmetInstall
+  autocmd FileType html,css,php EmmetInstall
 augroup END
 
-" let g:user_emmet_leader_key = '<C-e>'
+let g:user_emmet_leader_key = '<C-e>'
 let g:user_emmet_expandabbr_key = '<C-e><C-e>'
-let g:user_emmet_mode = 'iv'
+let g:user_emmet_mode = 'inv'
 let g:user_emmet_settings = {
       \'indentation' : '  ',
       \'lang' : 'ja'
