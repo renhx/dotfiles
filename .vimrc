@@ -302,10 +302,14 @@ nnoremap <C-a><C-a> ggvG$
 vnoremap < <gv
 vnoremap > >gv
 
-" 不可視文字の表示切り替え
+" 不可視文字の表示切り替え, インデント付き=> <Space>i|I
 noremap <Space>c :set list!<CR>
 " wrapの切り替え
 noremap <Space>w :set wrap!<CR>
+
+" 行末にセミコロンを付与して改行
+nmap <Space>; A;<CR>
+imap <Space>; <ESC>A;<CR>
 
 ",Tでテンプレート展開、Tabで選択
 nnoremap <silent> ,T :<C-u>Template
