@@ -9,6 +9,8 @@ brew install fish --HEAD
 brew install zsh
 brew install zsh-completions
 brew install tmux
+brew install tmux-mem-cpu-load
+brew install rainbarf
 brew install reattach-to-user-namespace
 brew install mobile-shell
 
