@@ -23,7 +23,7 @@ if has('vim_starting')
   set nocompatible
   set runtimepath+=~/.vim/bundle/neobundle.vim/
 endif
-call neobundle#rc(expand('~/.vim/bundle/'))
+call neobundle#begin(expand('~/.vim/bundle/'))
 
 " Let NeoBundle manage NeoBundle
 NeoBundleFetch 'Shougo/neobundle.vim'
@@ -106,7 +106,11 @@ NeoBundle 'thinca/vim-fontzoom'
 NeoBundle 'zaiste/tmux.vim'
 NeoBundle 'junegunn/vim-emoji'
 NeoBundle 'sophacles/vim-processing'
+NeoBundle 'renhx/vim-arduino-syntax'
+NeoBundle 'jplaut/vim-arduino-ino'
+" NeoBundle 'vim-scripts/AnsiEsc.vim'
 
+call neobundle#end()
 NeoBundleCheck
 
 
@@ -817,3 +821,14 @@ let g:indent_guides_guide_size=1
 " fontzoom
 "------------------------------------------------
 let g:fontzoom_no_default_key_mappings=1
+
+"------------------------------------------------
+" vim-arduino-ino
+"------------------------------------------------
+let g:vim_arduino_map_keys = 0
+let g:vim_arduino_auto_open_serial = 0
+nnoremap <Space>ac :call ArduinoCompile()<CR>
+nnoremap <Space>ab :call ArduinoCompile()<CR>
+nnoremap <Space>ad :call ArduinoDeploy()<CR>
+nnoremap <Space>au :call ArduinoDeploy()<CR>
+nnoremap <Space>as :call ArduinoSerialMonitor()<CR>

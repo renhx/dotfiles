@@ -40,6 +40,7 @@ brew install htop
 brew install macvim --with-cscope --with-luajit --HEAD # ln -s /usr/local/Cellar/macvim/HEAD/MacVim.app /Applications
 brew install openssl
 brew install ngrok
+brew install ino
 
 brew tap peco/peco
 brew install peco
