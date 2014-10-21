@@ -58,13 +58,21 @@ function gii
 end
 
 # MacVim
-#alias vim='env LANG=ja_JP.UTF-8 /Applications/MacVim.app/Contents/MacOS/Vim "$@"'
-alias vim='env LANG=ja_JP.UTF-8 mvim -v $ARGV'
-alias vimm='vim --remote-tab-silent'
+if which mvim >/dev/null 2>&1
+  #alias vim='env LANG=ja_JP.UTF-8 /Applications/MacVim.app/Contents/MacOS/Vim "$@"'
+  alias vim='env LANG=ja_JP.UTF-8 mvim -v $ARGV'
+  alias vimm='vim --remote-tab-silent'
+  set -x EDITOR 'mvim -v'
+else
+  set -x EDITOR 'vim'
+end
 
 # tmux
-alias tm='tmux'
-alias ta='tmux a'
+if which tmux >/dev/null 2>&1
+  alias tm='tmux'
+  alias ta='tmux a'
+  alias ti='tmuxinator'
+end
 
 #------------------------------
 # KeyBindings
