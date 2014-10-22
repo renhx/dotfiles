@@ -109,6 +109,7 @@ NeoBundle 'sophacles/vim-processing'
 NeoBundle 'renhx/vim-arduino-syntax'
 NeoBundle 'jplaut/vim-arduino-ino'
 " NeoBundle 'vim-scripts/AnsiEsc.vim'
+NeoBundle 'hynek/vim-python-pep8-indent'
 
 call neobundle#end()
 NeoBundleCheck
