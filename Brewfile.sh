@@ -56,3 +56,4 @@ brew install apktool
 
 #Teardown
 brew cleanup
+brew linkapps

@@ -27,7 +27,7 @@ if [ $? -ne 0 ]; then
 fi
 cd ..
 
-echo ''
+cd .. && echo ''
 echo '--------------------------'
 echo 'Append the following lines...'
 echo 'export PATH=$HOME/usr/local/bin/:$PATH'

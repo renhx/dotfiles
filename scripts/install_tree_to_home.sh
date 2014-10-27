@@ -14,8 +14,9 @@ make prefix=$HOME/usr/local install
 if [ $? -ne 0 ]; then
     echo "Error: tree"; exit 1
 fi
+cd ..
 
-echo ''
+cd .. && echo ''
 echo '--------------------------'
 echo 'Append the following lines...'
 echo 'export PATH=$HOME/usr/local/bin/:$PATH'

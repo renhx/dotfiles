@@ -18,7 +18,10 @@ fish:
 		mkdir -p ${HOME}/.config/fish/; \
 	fi
 	ln -s -i ${DOTFILES}/.config/fish/config.fish ${HOME}/.config/fish/config.fish
-	@echo "YOU NEED TO RUN: echo '/usr/local/bin/fish' >> /etc/shells && chsh -s /usr/local/bin/fish"
+	@echo "--------------------"
+	@echo "Run the following line"
+	@echo "echo '/usr/local/bin/fish' >> /etc/shells && chsh -s /usr/local/bin/fish"
+	@echo "--------------------"
 
 tmux:
 	ln -s -i ${DOTFILES}/.tmux.conf ${HOME}/.tmux.conf
@@ -41,14 +44,14 @@ tig:
 
 homebrew:
 	#ruby -e "$(curl -fsSL https://raw.github.com/Homebrew/homebrew/go/install)"
-	brew bundle
-	
-	# macvim
-	ln -s -i /usr/local/Cellar/macvim/HEAD/MacVim.app /Applications/MacVim.app
+	./Brewfile.sh
 	
 	# ricty font
-	cp -f /usr/local/Cellar/ricty/3.2.3/share/fonts/Ricty*.ttf ~/Library/Fonts/
-	fc-cache -vf
+	@echo "--------------------"
+	@echo "Run the following lines"
+	@echo "cp -f /PATH/TO/RICTY/fonts/Ricty*.ttf ~/Library/Fonts/"
+	@echo "fc-cache -vf"
+	@echo "--------------------"
 
 iterm:
 	@echo "iTerm2"
