@@ -312,9 +312,9 @@ noremap <Space>c :set list!<CR>
 " wrapの切り替え
 noremap <Space>w :set wrap!<CR>
 
-" 行末にセミコロンを付与して改行
-nmap <Space>; A;<CR>
-imap <Space>; <ESC>A;<CR>
+" 行末にセミコロンを付与
+nmap <Space>; A;<ESC>
+imap <Space>; <ESC>A;
 
 ",Tでテンプレート展開、Tabで選択
 nnoremap <silent> ,T :<C-u>Template
