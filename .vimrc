@@ -110,6 +110,7 @@ NeoBundle 'renhx/vim-arduino-syntax'
 NeoBundle 'jplaut/vim-arduino-ino'
 " NeoBundle 'vim-scripts/AnsiEsc.vim'
 NeoBundle 'hynek/vim-python-pep8-indent'
+NeoBundle 'mbbill/undotree'
 
 call neobundle#end()
 NeoBundleCheck
@@ -153,6 +154,12 @@ command! DiffOrig vert new | set bt=nofile | r # | 0d_ | diffthis | wincmd p | d
 
 " % でのdo...end移動など対応(標準添付)
 source $VIMRUNTIME/macros/matchit.vim
+
+" Undoの永続化
+if has("persistent_undo")
+  set undodir=$HOME/.vim/undodir/
+  set undofile
+endif
 
 "Like Tab Editor
 "tab sball                                        " 1Buffer == 1Tab ?
@@ -833,3 +840,12 @@ nnoremap <Space>ab :call ArduinoCompile()<CR>
 nnoremap <Space>ad :call ArduinoDeploy()<CR>
 nnoremap <Space>au :call ArduinoDeploy()<CR>
 nnoremap <Space>as :call ArduinoSerialMonitor()<CR>
+
+"------------------------------------------------
+" undotree
+"------------------------------------------------
+nnoremap <Space>u :UndotreeToggle<CR>
+let g:undotree_WindowLayout=4
+let g:undotree_SplitWidth=30
+let g:undotree_DiffpanelHeight=5
+let g:undotree_SetFocusWhenToggle=1
