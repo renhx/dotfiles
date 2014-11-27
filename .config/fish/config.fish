@@ -13,13 +13,17 @@ set -x PATH /Applications/android-sdk-mac_x86/tools $PATH
 set -x PATH /Applications/android-sdk-mac_x86/platform-tools $PATH
 set -x PATH $HOME/.nodebrew/current/bin $PATH
 
-set -x PATH "$HOME/.pyenv/bin" $PATH
-. (pyenv init - | psub)
+if which pyenv >/dev/null 2>&1
+  set -x PATH "$HOME/.pyenv/bin" $PATH
+  . (pyenv init - | psub)
+end
 
-set -x PATH $HOME/.rbenv/bin $PATH
-set -x PATH $HOME/.rbenv/shims $PATH
-#. (rbenv init - | psub)
-rbenv rehash >/dev/null ^&1
+if which rbenv >/dev/null 2>&1
+  set -x PATH $HOME/.rbenv/bin $PATH
+  set -x PATH $HOME/.rbenv/shims $PATH
+  #. (rbenv init - | psub)
+  rbenv rehash >/dev/null ^&1
+end
 
 #------------------------------
 # import from .bashrc
