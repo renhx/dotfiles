@@ -54,7 +54,7 @@ alias gis='git status'
 alias gil='git log'
 alias gib='git branch'
 function gii
-  curl "http://www.gitignore.io/api/$argv"
+  curl -L -s "https://www.gitignore.io/api/$argv"
 end
 
 # MacVim

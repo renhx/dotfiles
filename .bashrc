@@ -27,7 +27,7 @@ alias gic='git commit'
 alias gis='git status'
 alias gil='git log'
 alias gib='git branch'
-function gii() { curl http://www.gitignore.io/api/$@ ;}
+function gii() { curl https://www.gitignore.io/api/$@ ;}
 
 # MacVim
 if which mvim >/dev/null 2>&1; then
