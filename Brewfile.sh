@@ -34,6 +34,7 @@ brew install ghc cabal-install
 brew install git
 brew install tig
 brew install hub
+brew install gist
 brew install tree
 brew install watch
 brew install wget
@@ -42,6 +43,7 @@ brew install macvim --with-cscope --with-luajit --HEAD # ln -s /usr/local/Cellar
 brew install openssl
 brew install ngrok
 brew install ino
+brew install ctags
 
 brew tap peco/peco
 brew install peco
