@@ -42,7 +42,8 @@ NeoBundle 'Shougo/vimproc', {
 " Colorschemes
 "------------------------------------------------
 
-NeoBundle 'sickill/vim-monokai'
+" NeoBundle 'sickill/vim-monokai'
+NeoBundle 'renhx/vim-monokai'
 NeoBundle 'junegunn/seoul256.vim'
 NeoBundle 'altercation/vim-colors-solarized'
 NeoBundle 'chriskempson/vim-tomorrow-theme'
@@ -142,6 +143,7 @@ filetype plugin on
 syntax on                                         " シンタックスハイライトをつける
 set clipboard=unnamed,autoselect                  " clipboard共有を有効にする, +clipboardになっていること
 set shell=bash
+set pumheight=10                                  " 補完等のポップアップ(pmenu)の最大同時表示数
 
 set autoread                                      " 他で書き換えられたら自動で読み直す
 augroup checktime                                 " 書き換えチェックの間隔を短く
@@ -216,6 +218,7 @@ set foldlevelstart=10                             " デフォルトでは開い�
 syntax enable                                     " ハイライト on
 set number                                        " 行番号をつける
 set showmatch                                     " 括弧の対応をハイライト
+set matchtime=1                                   " 対応する括弧の表示時間
 " set list                                        " 不可視文字表示
 set listchars=tab:»-,trail:-,extends:»,precedes:«,eol:$ " 不可視文字の表示形式
 highlight ZenkakuSpace cterm=underline ctermfg=lightblue guibg=darkgray
