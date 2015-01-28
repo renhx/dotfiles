@@ -12,6 +12,7 @@ set -x PATH /usr/local/bin /usr/local/sbin $PATH
 set -x PATH /Applications/android-sdk-mac_x86/tools $PATH
 set -x PATH /Applications/android-sdk-mac_x86/platform-tools $PATH
 set -x PATH $HOME/.nodebrew/current/bin $PATH
+set -x PATH ~/.cabal/bin $PATH
 
 if which pyenv >/dev/null 2>&1
   set -x PATH "$HOME/.pyenv/bin" $PATH

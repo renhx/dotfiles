@@ -14,3 +14,4 @@ if which rbenv >/dev/null 2>&1; then eval "$(rbenv init -)"; fi
 export MONO_GAC_PREFIX="/usr/local"
 if [ -f ~/.bashrc ]; then . ~/.bashrc; fi
 if [ -f ~/.local-bashrc ]; then . ~/.local-bashrc; fi
+export PATH=~/.cabal/bin:$PATH

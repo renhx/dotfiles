@@ -28,6 +28,7 @@ brew install rbenv ruby-build
 brew install pyenv
 brew install nodebrew
 brew install mono
+brew install ghc cabal-install
 
 #misc.
 brew install git
