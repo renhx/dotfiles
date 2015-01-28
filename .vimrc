@@ -4,7 +4,6 @@
 "   yankround移行
 "   tagbar移行
 "   vim-ctrlspace
-"   ctrlp
 "   emmetの展開後のカーソル位置がおかしい件
 "   バックアップの自動保存?
 "   ノーマルモード移行時にIMEを英数に切り替え?
@@ -67,7 +66,9 @@ NeoBundle 'terryma/vim-multiple-cursors'           " カーソル分身(sublime�
 "NeoBundle 'koron/minimap-vim'                     " sublimeライクなminimap, gvimでないと動作しないようであるためコメントアウト
 "NeoBundle 'Shougo/vimshell.vim'                   " 
 NeoBundle 'vim-scripts/taglist.vim'                " TODO: tagbarの方が良さげ？
+" NeoBundle 'majutsushi/tagbar'                      " taglistからの移行
 NeoBundle 'kana/vim-smartinput'                    " 対応記号の自動入力(mapするより頭良い)
+" NeoBundle 'cohama/vim-smartinput-endwise'          " smartinputでdo-endなども対応させる
 "NeoBundle 'vim-scripts/Highlight-UnMatched-Brackets'
 "NeoBundle 'daylilyfield/sexyscroll.vim'           " yuroyoro/smooth_scroll.vimの代わり(cui macvimでの動作都合)
 NeoBundle 'joeytwiddle/sexy_scroller.vim'          " よりスムーズなスクロール
@@ -105,12 +106,27 @@ NeoBundle 'dag/vim-fish'                           " Fish Shell
 NeoBundle 'thinca/vim-fontzoom'
 NeoBundle 'zaiste/tmux.vim'
 NeoBundle 'junegunn/vim-emoji'
-NeoBundle 'sophacles/vim-processing'
+" NeoBundle 'sophacles/vim-processing'
+NeoBundle 'crazymaster/vim-processing', {'rev' : '45123b'}
 NeoBundle 'renhx/vim-arduino-syntax'
 NeoBundle 'jplaut/vim-arduino-ino'
 " NeoBundle 'vim-scripts/AnsiEsc.vim'
 NeoBundle 'hynek/vim-python-pep8-indent'
 NeoBundle 'mbbill/undotree'
+NeoBundle 'ctrlpvim/ctrlp.vim'
+" NeoBundle 'rhysd/vim-textobj-ruby'                 " r(Ruby Text Object): vir, cir, dir, dar, etc...
+NeoBundle 'kana/vim-textobj-user'
+NeoBundle 'nelstrom/vim-textobj-rubyblock'
+NeoBundle 'koron/codic-vim'
+NeoBundle 'cohama/agit.vim'
+NeoBundle 'rhysd/committia.vim'
+NeoBundle 'haya14busa/incsearch.vim'
+" NeoBundle 'mattn/webapi-vim'
+" NeoBundle 'mattn/excitetranslate-vim'
+" NeoBundle 'mattn/googletranslate-vim'
+NeoBundle 'ujihisa/neco-look'
+NeoBundle 'matze/vim-move'
+" NeoBundle 'skammer/vim-css-color'
 
 call neobundle#end()
 NeoBundleCheck
@@ -518,6 +534,12 @@ call smartinput#map_to_trigger('i', '<Plug>(smartinput_CR)',
 
 
 "------------------------------------------------
+" vim-smartinput-endwise
+"------------------------------------------------
+" call smartinput_endwise#define_default_rules()
+
+
+"------------------------------------------------
 " quickrun
 "------------------------------------------------
 
@@ -614,6 +636,11 @@ let Tlist_Use_SingleClick = 1
 "let Tlist_Display_Tag_Scope = 0
 "let Tlist_Display_Prototype = 0
 "let Tlist_Compact_Format = 1
+
+
+"------------------------------------------------
+" tagbar
+"------------------------------------------------
 
 
 "------------------------------------------------
@@ -849,3 +876,34 @@ let g:undotree_WindowLayout=4
 let g:undotree_SplitWidth=30
 let g:undotree_DiffpanelHeight=5
 let g:undotree_SetFocusWhenToggle=1
+
+"------------------------------------------------
+" ctrlp
+"------------------------------------------------
+let g:ctrlp_map = '<Space>p'                         " Default: <c-p>
+let g:ctrlp_cmd = 'CtrlP'
+let g:ctrlp_use_migemo = 1
+
+" Spaceで新規タブで開く (tmuxとの衝突回避)
+let g:ctrlp_prompt_mappings = { 'AcceptSelection("t")': ['<c-t>', '<Space>'] }
+
+"------------------------------------------------
+" incsearch.vim
+"------------------------------------------------
+map /  <Plug>(incsearch-forward)
+map ?  <Plug>(incsearch-backward)
+map g/ <Plug>(incsearch-stay)
+
+"------------------------------------------------
+" googletranslate
+"------------------------------------------------
+let g:googletranslate_userip = '0.0.0.0'
+
+"------------------------------------------------
+" vim-move
+"------------------------------------------------
+let g:move_map_keys = 0
+vmap <C-h> <Plug>MoveBlockUp
+vmap <C-l> <Plug>MoveBlockDown
+" nmap <A-j> <Plug>MoveLineDown
+" nmap <A-k> <Plug>MoveLineUp
