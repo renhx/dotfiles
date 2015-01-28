@@ -48,3 +48,6 @@ if which brew >/dev/null 2>&1; then
     source `brew --prefix`/etc/bash_completion
   fi
 fi
+
+# added by travis gem
+[ -f /Users/Ren/.travis/travis.sh ] && source /Users/Ren/.travis/travis.sh

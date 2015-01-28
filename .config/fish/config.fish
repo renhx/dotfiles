@@ -14,13 +14,15 @@ set -x PATH /Applications/android-sdk-mac_x86/platform-tools $PATH
 set -x PATH $HOME/.nodebrew/current/bin $PATH
 set -x PATH ~/.cabal/bin $PATH
 
+set -x PATH "$HOME/.pyenv/bin" $PATH
 if which pyenv >/dev/null 2>&1
-  set -x PATH "$HOME/.pyenv/bin" $PATH
   . (pyenv init - | psub)
+  # status --is-interactive; and . (pyenv init -|psub)
+  # status --is-interactive; and . (pyenv virtualenv-init -|psub)
 end
 
+set -x PATH $HOME/.rbenv/bin $PATH
 if which rbenv >/dev/null 2>&1
-  set -x PATH $HOME/.rbenv/bin $PATH
   set -x PATH $HOME/.rbenv/shims $PATH
   #. (rbenv init - | psub)
   rbenv rehash >/dev/null ^&1
