@@ -205,6 +205,9 @@ set tabstop=2                                     " 画面上でタブ文字が�
 set shiftwidth=2                                  " 自動インデントでずれる幅
 set softtabstop=2                                 " 連続した空白に対してタブキーやバックスペースキーでカーソルが動く幅
 
+set foldenable
+set foldmethod=syntax                             " 文法ベースのFolding (zo, zc)
+set foldlevelstart=10                             " デフォルトでは開いておく
 
 "------------------------------------------------
 " display
@@ -694,7 +697,7 @@ aug END
 let g:user_emmet_install_global = 0
 augroup emmet_install
   autocmd!
-  autocmd FileType html,css,php EmmetInstall
+  autocmd FileType html,css,php,eruby EmmetInstall
 augroup END
 
 let g:user_emmet_leader_key = '<C-e>'
@@ -810,7 +813,7 @@ let g:limelight_default_coefficient = 0.8
 "------------------------------------------------
 " Markdown
 "------------------------------------------------
-let g:vim_markdown_folding_disabled=1
+" let g:vim_markdown_folding_disabled=1
 
 "------------------------------------------------
 " clever-f
