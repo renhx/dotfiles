@@ -482,6 +482,7 @@ let g:neosnippet#snippets_directory = s:my_snippet
 "------------------------------------------------
 " let g:SexyScroller_ScrollTime = 10
 let g:SexyScroller_CursorTime = 8
+noremap <Space>ss :SexyScrollerToggle<CR>
 
 
 "------------------------------------------------
@@ -773,8 +774,8 @@ xmap <Space>H <Plug>(quickhl-manual-reset)
 "------------------------------------------------
 " SplitJoin
 "------------------------------------------------
-nmap <Space>sj :SplitjoinJoin<cr>
-nmap <Space>ss :SplitjoinSplit<cr>
+nmap <Space>sjj :SplitjoinJoin<cr>
+nmap <Space>sjs :SplitjoinSplit<cr>
 
 "------------------------------------------------
 " Goyo
