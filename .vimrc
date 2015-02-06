@@ -4,9 +4,8 @@
 "   yankround移行
 "   tagbar移行
 "   vim-ctrlspace
-"   emmetの展開後のカーソル位置がおかしい件
-"   バックアップの自動保存?
 "   ノーマルモード移行時にIMEを英数に切り替え?
+"   コンテキストに応じたfiletype (osyo-manga/vim-precious)
 "
 " Thanks: @alotofwe
 
@@ -69,7 +68,7 @@ NeoBundle 'terryma/vim-multiple-cursors'           " カーソル分身(sublime�
 NeoBundle 'vim-scripts/taglist.vim'                " TODO: tagbarの方が良さげ？
 " NeoBundle 'majutsushi/tagbar'                      " taglistからの移行
 NeoBundle 'kana/vim-smartinput'                    " 対応記号の自動入力(mapするより頭良い)
-" NeoBundle 'cohama/vim-smartinput-endwise'          " smartinputでdo-endなども対応させる
+NeoBundle 'cohama/vim-smartinput-endwise'          " smartinputでdo-endなども対応させる
 "NeoBundle 'vim-scripts/Highlight-UnMatched-Brackets'
 "NeoBundle 'daylilyfield/sexyscroll.vim'           " yuroyoro/smooth_scroll.vimの代わり(cui macvimでの動作都合)
 NeoBundle 'joeytwiddle/sexy_scroller.vim'          " よりスムーズなスクロール
@@ -411,12 +410,16 @@ inoremap <expr><C-g>     neocomplete#undo_completion()
 " C-lで、補完候補の中から共通する部分を補完
 inoremap <expr><C-l>     neocomplete#complete_common_string()
 "imap <expr><TAB> neocomplete#sources#snippets_complete#expandable() ? “\<Plug>(neocomplcache_snippets_expand)” : pumvisible() ? “\<C-n>” : “\<TAB>”
-inoremap <silent> <CR> <C-r>=<SID>my_cr_function()<CR>
 
-function! s:my_cr_function()
-  return neocomplete#smart_close_popup() . "\<CR>"                  " 確実にポップアップを削除
-  "return pumvisible() ? neocomplete#close_popup() : \"\<CR>"       " 現在選択している候補を確定
-endfunction
+" ---
+" inoremap <silent> <CR> <C-r>=<SID>my_cr_function()<CR>
+
+" function! s:my_cr_function()
+  " return neocomplete#smart_close_popup() . \"\<CR>"                  " 確実にポップアップを削除
+  " ' return pumvisible() ? neocomplete#close_popup() : \"\<CR>"       " 現在選択している候補を確定
+" endfunction
+" ---
+
 inoremap <expr><TAB>  pumvisible() ? "\<C-n>" : "\<TAB>"
 "inoremap <expr><C-h> neocomplete#smart_close_popup()."<C-h>"       " C-hやBSを押した時に確実にポップアップを削除
 "inoremap <expr><BS> neocomplete#smart_close_popup()."<C-h>"
@@ -545,7 +548,7 @@ call smartinput#map_to_trigger('i', '<Plug>(smartinput_CR)',
 "------------------------------------------------
 " vim-smartinput-endwise
 "------------------------------------------------
-" call smartinput_endwise#define_default_rules()
+call smartinput_endwise#define_default_rules()
 
 
 "------------------------------------------------
