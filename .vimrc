@@ -256,8 +256,8 @@ set ruler                                         " カーソルが何行目の�
 
 set ffs=unix,dos,mac                              " 改行文字指定
 set encoding=utf-8                                " デフォルトエンコーディング指定
-" set fileencoding=utf-8
-" set fileencodings=utf-8,sjis
+set fileencoding=utf-8
+set fileencodings=utf-8,sjis
 
 
 "------------------------------------------------
