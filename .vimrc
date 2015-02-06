@@ -349,6 +349,9 @@ imap <Space>; <ESC>A;
 nnoremap <silent> ,T :<C-u>Template
 nnoremap <silent> <Space>T :<C-u>Template
 
+" 現在開いているファイルのFull Pathを表示
+command! ShowFullPath echo expand('%:p')
+
 " 括弧などの自動補完 -> vim-smartinputへ移行
 "inoremap , ,<Space>
 "inoremap { {}<LEFT>
