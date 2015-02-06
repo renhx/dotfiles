@@ -57,6 +57,9 @@ brew install dex2jar
 brew install apktool
 #procyon
 
+brew tap homebrew/binary
+brew install jad
+
 #Teardown
 brew cleanup
 brew linkapps
