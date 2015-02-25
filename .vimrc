@@ -95,6 +95,7 @@ NeoBundle 'junegunn/limelight.vim'                 " Hyperfocus-writing in Vim.
 " NeoBundle 'junegunn/vim-easy-align'
 NeoBundle 'tpope/vim-surround'                     " cs'/, ds'
 NeoBundle 'rcmdnk/vim-markdown'
+NeoBundle 'kannokanno/previm'                      " Realtime Markdown Preview
 NeoBundle 'rhysd/clever-f.vim'                     " f{chr}で行を跨いで移動&日本語対応&;は任意の記号 vim-easymotion or sneak.vim or clever-f.vim
 NeoBundle 'othree/javascript-libraries-syntax.vim' " local-vimrcと組み合わせ
 NeoBundle 'MarcWeber/vim-addon-local-vimrc'        " .local-vimrc, 特定ディレクトリ以下でのみ有効化したい.vimrcがある場合, js-lib-syntaxと組み合わせ
@@ -823,7 +824,12 @@ let g:limelight_default_coefficient = 0.8
 "------------------------------------------------
 " Markdown
 "------------------------------------------------
-" let g:vim_markdown_folding_disabled=1
+let g:vim_markdown_folding_disabled=1
+
+"------------------------------------------------
+" previm
+"------------------------------------------------
+noremap <Space>md :PrevimOpen<CR>
 
 "------------------------------------------------
 " clever-f
