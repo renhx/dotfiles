@@ -128,6 +128,7 @@ NeoBundle 'haya14busa/incsearch.vim'
 NeoBundle 'ujihisa/neco-look'
 NeoBundle 'matze/vim-move'
 " NeoBundle 'skammer/vim-css-color'
+NeoBundle 'jeroenbourgois/vim-actionscript'
 
 call neobundle#end()
 NeoBundleCheck
