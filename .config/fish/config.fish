@@ -28,6 +28,10 @@ if which rbenv >/dev/null 2>&1
   rbenv rehash >/dev/null ^&1
 end
 
+if which go >/dev/null 2>&1
+  set -x GOPATH $HOME/go
+end
+
 #------------------------------
 # import from .bashrc
 #------------------------------
