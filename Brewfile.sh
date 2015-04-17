@@ -4,6 +4,7 @@
 brew update
 
 #Shell
+brew install coreutils
 brew install bash-completion
 brew install fish --HEAD
 brew install zsh
