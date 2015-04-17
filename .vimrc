@@ -783,6 +783,10 @@ nmap <Space>sjs :SplitjoinSplit<cr>
 " Goyo
 "------------------------------------------------
 
+nmap <Space>goy :Goyo<cr>
+nmap <Space>gow :let g:goyo_width=90<cr>
+nmap <Space>goW :let g:goyo_width=150<cr>
+
 let g:goyo_width = 90
 
 function! s:goyo_enter()
