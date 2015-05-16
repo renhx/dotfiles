@@ -50,6 +50,8 @@ brew tap peco/peco
 brew install peco
 brew install migemogrep
 
+brew tap uetchy/nlp
+
 #Pentest
 brew install sqlmap
 brew install nmap
