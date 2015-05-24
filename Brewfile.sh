@@ -30,6 +30,8 @@ brew install pyenv
 brew install nodebrew
 brew install mono
 brew install ghc cabal-install
+cabal update
+cabal install ghc-mod
 
 #misc.
 brew install git

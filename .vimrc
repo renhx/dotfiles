@@ -129,6 +129,9 @@ NeoBundle 'ujihisa/neco-look'
 NeoBundle 'matze/vim-move'
 " NeoBundle 'skammer/vim-css-color'
 NeoBundle 'jeroenbourgois/vim-actionscript'
+NeoBundleLazy 'dag/vim2hs', {'autoload': {'filetypes': ['haskell']}}
+NeoBundleLazy 'eagletmt/neco-ghc', {'autoload': {'filetypes': ['haskell']}}
+NeoBundleLazy 'renhx/ghcmod-vim', {'rev':'issue-66', 'autoload': {'filetypes': ['haskell']}}
 
 call neobundle#end()
 NeoBundleCheck
@@ -931,3 +934,9 @@ vmap <C-h> <Plug>MoveBlockUp
 vmap <C-l> <Plug>MoveBlockDown
 " nmap <A-j> <Plug>MoveLineDown
 " nmap <A-k> <Plug>MoveLineUp
+
+"------------------------------------------------
+" vim2hs
+"------------------------------------------------
+" let g:haskell_conceal = 0
+" autocmd BufWritePost *.hs GhcModCheckAndLintAsync
