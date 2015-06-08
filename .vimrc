@@ -129,6 +129,7 @@ NeoBundle 'ujihisa/neco-look'
 NeoBundle 'matze/vim-move'
 " NeoBundle 'skammer/vim-css-color'
 NeoBundle 'jeroenbourgois/vim-actionscript'
+NeoBundle 'fatih/vim-go'
 
 call neobundle#end()
 NeoBundleCheck
@@ -732,6 +733,7 @@ noremap <Space>er :Errors<CR>
 let g:syntastic_mode_map={ 'mode': 'active',
                      \ 'active_filetypes': [],
                      \ 'passive_filetypes': ['html'] }
+" let g:syntastic_go_checkers = ['go', 'golint']
 
 
 "------------------------------------------------
@@ -931,3 +933,9 @@ vmap <C-h> <Plug>MoveBlockUp
 vmap <C-l> <Plug>MoveBlockDown
 " nmap <A-j> <Plug>MoveLineDown
 " nmap <A-k> <Plug>MoveLineUp
+
+"------------------------------------------------
+" vim-go
+"------------------------------------------------
+let g:go_doc_keywordprg_enabled = 0
+let g:go_def_mapping_enabled = 0
