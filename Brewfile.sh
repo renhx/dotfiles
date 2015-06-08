@@ -61,6 +61,7 @@ brew install hping
 brew install dex2jar
 brew install apktool
 #procyon
+brew install exiftool
 
 brew tap homebrew/binary
 brew install jad
