@@ -2,6 +2,7 @@
 
 #Setup
 brew update
+brew install caskroom/cask/brew-cask
 
 #Shell
 brew install coreutils
@@ -16,6 +17,9 @@ brew install reattach-to-user-namespace
 brew install mobile-shell
 
 #Fonts
+brew tap caskroom/fonts
+brew cask install font-myrica
+
 brew tap sanemat/font
 brew install ricty --vim-powerline
 # cp -f /PATH/TO/RICTY/fonts/Ricty*.ttf ~/Library/Fonts/
