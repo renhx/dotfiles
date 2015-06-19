@@ -94,7 +94,9 @@ NeoBundle 'junegunn/goyo.vim'                      " Distraction-free writing in
 NeoBundle 'junegunn/limelight.vim'                 " Hyperfocus-writing in Vim.
 " NeoBundle 'junegunn/vim-easy-align'
 NeoBundle 'tpope/vim-surround'                     " cs'/, ds'
-NeoBundle 'rcmdnk/vim-markdown'
+NeoBundle 'plasticboy/vim-markdown'
+" NeoBundle 'gabrielelana/vim-markdown'
+" NeoBundleLazy 'gabrielelana/vim-markdown', {'autoload':{'filetypes':['markdown']}}
 NeoBundle 'kannokanno/previm'                      " Realtime Markdown Preview
 NeoBundle 'rhysd/clever-f.vim'                     " f{chr}で行を跨いで移動&日本語対応&;は任意の記号 vim-easymotion or sneak.vim or clever-f.vim
 NeoBundle 'othree/javascript-libraries-syntax.vim' " local-vimrcと組み合わせ
@@ -836,6 +838,14 @@ let g:limelight_default_coefficient = 0.8
 " Markdown
 "------------------------------------------------
 let g:vim_markdown_folding_disabled=1
+" autocmd Filetype mkd nmap <Tab> <S-v>><ESC>
+" autocmd Filetype mkd nmap <S-Tab> <S-v><<ESC>
+" autocmd Filetype mkd imap <Tab> <ESC><S-v>><ESC>i
+" autocmd Filetype mkd imap <S-Tab> <ESC><S-v><<ESC>i
+"----
+" let g:markdown_enable_mappings = 1
+" let g:markdown_enable_insert_mode_mappings = 1
+" let g:markdown_enable_folding = 0
 
 "------------------------------------------------
 " previm
