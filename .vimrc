@@ -115,6 +115,7 @@ NeoBundle 'jplaut/vim-arduino-ino'
 NeoBundle 'hynek/vim-python-pep8-indent'
 NeoBundle 'mbbill/undotree'
 NeoBundle 'ctrlpvim/ctrlp.vim'
+NeoBundle 'tacahiroy/ctrlp-funky'
 " NeoBundle 'rhysd/vim-textobj-ruby'                 " r(Ruby Text Object): vir, cir, dir, dar, etc...
 NeoBundle 'kana/vim-textobj-user'
 NeoBundle 'nelstrom/vim-textobj-rubyblock'
@@ -126,7 +127,7 @@ NeoBundle 'haya14busa/incsearch.vim'
 " NeoBundle 'mattn/excitetranslate-vim'
 " NeoBundle 'mattn/googletranslate-vim'
 NeoBundle 'ujihisa/neco-look'
-NeoBundle 'matze/vim-move'
+NeoBundle 'matze/vim-move'                           " 選択行を上下に移動(C-h, C-l)
 " NeoBundle 'skammer/vim-css-color'
 NeoBundle 'jeroenbourgois/vim-actionscript'
 NeoBundle 'fatih/vim-go'
@@ -912,6 +913,13 @@ let g:ctrlp_use_migemo = 1
 
 " Spaceで新規タブで開く (tmuxとの衝突回避)
 let g:ctrlp_prompt_mappings = { 'AcceptSelection("t")': ['<c-t>', '<Space>'] }
+
+"------------------------------------------------
+" ctrlp-funky
+"------------------------------------------------
+nnoremap <Space>PF :CtrlPFunky<Cr>
+let g:ctrlp_funky_matchtype = 'path'
+let g:ctrlp_funky_syntax_highlight = 1
 
 "------------------------------------------------
 " incsearch.vim
