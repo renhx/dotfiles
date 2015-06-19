@@ -131,6 +131,9 @@ NeoBundle 'matze/vim-move'                           " 選択行を上下に移�
 " NeoBundle 'skammer/vim-css-color'
 NeoBundle 'jeroenbourgois/vim-actionscript'
 NeoBundle 'fatih/vim-go'
+NeoBundleLazy 'dag/vim2hs', {'autoload': {'filetypes': ['haskell']}}
+NeoBundleLazy 'eagletmt/neco-ghc', {'autoload': {'filetypes': ['haskell']}}
+NeoBundleLazy 'renhx/ghcmod-vim', {'rev':'issue-66', 'autoload': {'filetypes': ['haskell']}}
 
 call neobundle#end()
 NeoBundleCheck
@@ -947,3 +950,9 @@ vmap <C-l> <Plug>MoveBlockDown
 "------------------------------------------------
 let g:go_doc_keywordprg_enabled = 0
 let g:go_def_mapping_enabled = 0
+
+"------------------------------------------------
+" vim2hs
+"------------------------------------------------
+" let g:haskell_conceal = 0
+" autocmd BufWritePost *.hs GhcModCheckAndLintAsync

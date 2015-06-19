@@ -34,6 +34,8 @@ brew install pyenv
 brew install nodebrew
 brew install mono
 brew install ghc cabal-install
+cabal update
+cabal install ghc-mod
 
 #misc.
 brew install git
@@ -54,6 +56,8 @@ brew install ctags
 brew tap peco/peco
 brew install peco
 brew install migemogrep
+
+brew tap uetchy/nlp
 
 #Pentest
 brew install sqlmap
