@@ -53,6 +53,7 @@ brew install ngrok
 brew install ino
 brew install ctags
 
+brew install cmigemo --HEAD
 brew tap peco/peco
 brew install peco
 brew install migemogrep

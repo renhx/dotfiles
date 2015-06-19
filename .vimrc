@@ -912,10 +912,29 @@ let g:undotree_SetFocusWhenToggle=1
 "------------------------------------------------
 let g:ctrlp_map = '<Space>p'                         " Default: <c-p>
 let g:ctrlp_cmd = 'CtrlP'
-let g:ctrlp_use_migemo = 1
+" let g:ctrlp_use_migemo = 1
 
 " Spaceで新規タブで開く (tmuxとの衝突回避)
 let g:ctrlp_prompt_mappings = { 'AcceptSelection("t")': ['<c-t>', '<Space>'] }
+
+function! MigemoMatch(items, str, limit, mmode, ispath, crfile, regex)
+  let tmp = tempname()
+  try
+    if a:str =~ '^\s*$'
+      return a:items
+    endif
+    call writefile(split(iconv(join(a:items, "\n"), &encoding, 'utf-8'), "\n"), tmp)
+    return split(iconv(system(
+    \  printf('migemogrep %s %s',
+    \    shellescape(a:str),
+    \    shellescape(tmp))), 'utf-8', &encoding), "\n")
+  catch
+    return []
+  finally
+    call delete(tmp)
+  endtry
+endfunction
+" let g:ctrlp_match_func = {'match' : 'MigemoMatch' }
 
 "------------------------------------------------
 " ctrlp-funky
