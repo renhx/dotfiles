@@ -52,6 +52,7 @@ brew install openssl
 brew install ngrok
 brew install ino
 brew install ctags
+brew install heroku-toolbelt
 
 brew install cmigemo --HEAD
 brew tap peco/peco
