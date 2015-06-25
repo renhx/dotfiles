@@ -34,6 +34,7 @@ vim:
 	mkdir -p ${HOME}/.vim/undodir/
 	mkdir -p ${HOME}/.vim/dict/
 	ln -s -i ${DOTFILES}/.vimrc ${HOME}/.vimrc
+	vim +NeoBundleInit +qall
 
 xvim:
 	ln -s -i ${DOTFILES}/.xvimrc ${HOME}/.xvimrc
