@@ -18,7 +18,9 @@
 "        :NeoBundleClean
 
 if has('vim_starting')
-  set nocompatible
+  if &compatible
+    set nocompatible
+  endif
   set runtimepath+=~/.vim/bundle/neobundle.vim/
 endif
 call neobundle#begin(expand('~/.vim/bundle/'))
@@ -145,7 +147,7 @@ NeoBundleCheck
 " basic
 "------------------------------------------------
 
-set nocompatible                                  " viとの互換をオフ
+" set nocompatible                                  " viとの互換をオフ (http://rbtnn.hateblo.jp/entry/2014/11/30/174749)
 filetype indent on                                " ファイルタイプ判定をon
 filetype plugin on
 syntax on                                         " シンタックスハイライトをつける
@@ -264,6 +266,7 @@ set ruler                                         " カーソルが何行目の�
 
 set ffs=unix,dos,mac                              " 改行文字指定
 set encoding=utf-8                                " デフォルトエンコーディング指定
+scriptencoding utf-8
 set fileencoding=utf-8
 set fileencodings=utf-8,sjis
 
@@ -408,11 +411,14 @@ let g:neocomplete#sources#dictionary#dictionaries = {
     \ 'ruby' : $HOME.'/.vim/dict/ruby.dict'
         \ }
 
-autocmd FileType css setlocal omnifunc=csscomplete#CompleteCSS      " Vimに用意されているオムニ補完を有効化
-autocmd FileType html,markdown setlocal omnifunc=htmlcomplete#CompleteTags
-autocmd FileType javascript setlocal omnifunc=javascriptcomplete#CompleteJS
-autocmd FileType python setlocal omnifunc=pythoncomplete#Complete
-autocmd FileType xml setlocal omnifunc=xmlcomplete#CompleteTags
+augroup neocomplete_config
+  autocmd!
+  autocmd FileType css setlocal omnifunc=csscomplete#CompleteCSS      " Vimに用意されているオムニ補完を有効化
+  autocmd FileType html,markdown setlocal omnifunc=htmlcomplete#CompleteTags
+  autocmd FileType javascript setlocal omnifunc=javascriptcomplete#CompleteJS
+  autocmd FileType python setlocal omnifunc=pythoncomplete#Complete
+  autocmd FileType xml setlocal omnifunc=xmlcomplete#CompleteTags
+augroup END
 
 " C-gで前回行われた補完をキャンセル
 inoremap <expr><C-g>     neocomplete#undo_completion()
@@ -823,10 +829,13 @@ function! s:goyo_leave()
   " call lightline#enable()
 endfunction
 
-autocmd! User GoyoEnter
-autocmd! User GoyoLeave
-autocmd  User GoyoEnter nested call <SID>goyo_enter()
-autocmd  User GoyoLeave nested call <SID>goyo_leave()
+augroup goyo_config
+  autocmd!
+  autocmd! User GoyoEnter
+  autocmd! User GoyoLeave
+  autocmd  User GoyoEnter nested call <SID>goyo_enter()
+  autocmd  User GoyoLeave nested call <SID>goyo_leave()
+augroup END
 
 
 "------------------------------------------------
@@ -930,7 +939,7 @@ let g:ctrlp_prompt_mappings = { 'AcceptSelection("t")': ['<c-t>', '<Space>'] }
 function! MigemoMatch(items, str, limit, mmode, ispath, crfile, regex)
   let tmp = tempname()
   try
-    if a:str =~ '^\s*$'
+    if a:str =~? '^\s*$'
       return a:items
     endif
     call writefile(split(iconv(join(a:items, "\n"), &encoding, 'utf-8'), "\n"), tmp)
