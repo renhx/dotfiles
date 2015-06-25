@@ -182,7 +182,7 @@ command! DiffOrig vert new | set bt=nofile | r # | 0d_ | diffthis | wincmd p | d
 source $VIMRUNTIME/macros/matchit.vim
 
 " Undoの永続化
-if has("persistent_undo")
+if has('persistent_undo')
   set undodir=$HOME/.vim/undodir/
   set undofile
 endif
@@ -575,21 +575,21 @@ nnoremap <silent> <Space>q :<C-u>QuickRun<CR>
 " quickrunのオプション設定
 " 非同期処理を行い, 実行時間を計測する
 let g:quickrun_config = {
-\   "_" : {
-\       "runner" : "vimproc",
-\       "runner/vimproc/updatetime" : 60,
-\       "hook/time/enable" : 1,
-\       "outputter/buffer/split" : ":botright 8sp",
-\       "outputter/buffer/into" : 1,
-\       "outputter/buffer/close_on_empty" : 1
+\   '_' : {
+\       'runner' : 'vimproc',
+\       'runner/vimproc/updatetime' : 60,
+\       'hook/time/enable' : 1,
+\       'outputter/buffer/split' : ':botright 8sp',
+\       'outputter/buffer/into' : 1,
+\       'outputter/buffer/close_on_empty' : 1
 \   },
-\   "html" : {
-\       "command" : "open",
-\       "exec"    : "%c %s",
-\       "outputter" : "browser",
-\       "hook/time/enable" : 0
+\   'html' : {
+\       'command' : 'open',
+\       'exec'    : '%c %s',
+\       'outputter' : 'browser',
+\       'hook/time/enable' : 0
 \   },
-\   "processing" : {
+\   'processing' : {
 \     'command': 'processing-java',
 \     'exec': '%c --sketch=%s:p:h/ --output=/tmp/processing_quickrun --run --force'
 \   }
@@ -643,7 +643,7 @@ let g:lightline = {
 "------------------------------------------------
 
 "set tags = tags
-let Tlist_Ctags_Cmd = "/usr/local/bin/ctags"    " ctagsのコマンド
+let Tlist_Ctags_Cmd = '/usr/local/bin/ctags'    " ctagsのコマンド
 let Tlist_Show_One_File = 1                     " 現在表示中のファイルのみのタグしか表示しない
 let Tlist_Use_Right_Window = 1                  " 右側にtag listのウインドうを表示する
 let Tlist_Exit_OnlyWindow = 1                   " taglistのウインドウだけならVimを閉じる
@@ -750,7 +750,7 @@ let g:mou_dir = '/Applications/Mou.app'
 "------------------------------------------------
 " Vim Browser Reload
 "------------------------------------------------
-let g:returnApp = "iTerm"
+let g:returnApp = 'iTerm'
 command! -bar ChromeReload silent !osascript -e 'tell application "Google Chrome" to reload active tab of window 1'
 
 "------------------------------------------------
