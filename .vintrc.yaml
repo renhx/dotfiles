@@ -1,0 +1,6 @@
+cmdargs:
+  severity: warning
+
+policies:
+  ProhibitSetNoCompatible:
+    enabled: false

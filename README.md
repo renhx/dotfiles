@@ -1,4 +1,4 @@
-# dotfiles
+# dotfiles [![Build Status](https://travis-ci.org/renhx/dotfiles.svg?branch=master)](https://travis-ci.org/renhx/dotfiles)
 ## Usage
 ```bash
 git clone https://github.com/renhx/dotfiles.git && cd dotfiles

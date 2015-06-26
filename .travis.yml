@@ -1,0 +1,24 @@
+os:
+  - linux
+language: python
+before_install:
+  - sudo apt-get update -qq
+  - sudo apt-get install -y libperl-dev python-dev python3-dev
+install:
+  - pip install vim-vint
+script:
+  - vint .vimrc
+  - make bash
+  - make fish
+  - make tmux
+  - make vim
+  - make xvim
+  - make git
+  - make tig
+  - make ruby
+  - cd scripts/
+  - ./install_rainbarf_to_home.sh
+  - ./install_tig_to_home.sh
+  - ./install_tmux_to_home.sh
+  - ./install_tree_to_home.sh
+  - ./install_vim_to_home.sh
