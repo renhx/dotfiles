@@ -9,3 +9,7 @@ script:
   - make fish
   - make tmux
   - make vim
+  - make xvim
+  - make git
+  - make tig
+  - make ruby
