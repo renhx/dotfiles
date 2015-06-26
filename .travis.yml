@@ -13,3 +13,5 @@ script:
   - make git
   - make tig
   - make ruby
+  - cd scripts/
+  - ./install_vim_to_home.sh
