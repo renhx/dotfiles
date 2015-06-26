@@ -138,6 +138,8 @@ NeoBundle 'fatih/vim-go'
 NeoBundleLazy 'dag/vim2hs', {'autoload': {'filetypes': ['haskell']}}
 NeoBundleLazy 'eagletmt/neco-ghc', {'autoload': {'filetypes': ['haskell']}}
 NeoBundleLazy 'renhx/ghcmod-vim', {'rev':'issue-66', 'autoload': {'filetypes': ['haskell']}}
+" NeoBundle 'moro/vim-review'
+NeoBundle 'orangain/vim-review', {'rev' : '17778f'}
 
 call neobundle#end()
 NeoBundleCheck
