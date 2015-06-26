@@ -17,7 +17,6 @@ script:
   - make tig
   - make ruby
   - cd scripts/
-  - ./install_mosh_to_home.sh
   - ./install_rainbarf_to_home.sh
   - ./install_tig_to_home.sh
   - ./install_tmux_to_home.sh
