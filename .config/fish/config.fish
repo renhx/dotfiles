@@ -62,6 +62,7 @@ alias be="bundle exec"
 alias irbc='irb -r irb/completion'
 
 # Git
+alias gi='git'
 alias gic='git commit'
 alias gis='git status'
 alias gil='git log'
