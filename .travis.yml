@@ -1,0 +1,11 @@
+os:
+  - linux
+language: python
+install:
+  - pip install vim-vint
+script:
+  - vint .vimrc
+  - make bash
+  - make fish
+  - make tmux
+  - make vim
