@@ -40,7 +40,7 @@ vim:
 	mkdir -p ${HOME}/.vim/undodir/
 	mkdir -p ${HOME}/.vim/dict/
 	ln -s -f ${DOTFILES}/.vimrc ${HOME}/.vimrc
-	vim +NeoBundleInit +qall
+	${HOME}/.vim/bundle/neobundle.vim/bin/neoinstall
 
 xvim:
 	ln -s -f ${DOTFILES}/.xvimrc ${HOME}/.xvimrc
