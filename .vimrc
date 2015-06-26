@@ -264,7 +264,7 @@ set ruler                                         " カーソルが何行目の�
 " encoding
 "------------------------------------------------
 
-set ffs=unix,dos,mac                              " 改行文字指定
+set fileformats=unix,dos,mac                              " 改行文字指定
 set encoding=utf-8                                " デフォルトエンコーディング指定
 scriptencoding utf-8
 set fileencoding=utf-8
@@ -824,7 +824,8 @@ function! s:goyo_leave()
   set scrolloff=3
   
   NERDTree
-  Limelight!
+  " Limelight!
+  call limelight#execute(1) " E477: No ! allowed
   GitGutterEnable
   " call lightline#enable()
 endfunction
