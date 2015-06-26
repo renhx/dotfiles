@@ -3,4 +3,4 @@ cmdargs:
 
 policies:
   ProhibitSetNoCompatible:
-    enabled: true
+    enabled: false
