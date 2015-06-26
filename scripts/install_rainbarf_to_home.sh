@@ -5,6 +5,11 @@
 if [ ! -d $HOME/usr/local/ ]; then
   mkdir -p $HOME/usr/local/
 fi
+
+if [ ! -d $HOME/usr/local/bin/ ]; then
+  mkdir -p $HOME/usr/local/bin/
+fi
+
 mkdir tmp_install_rainbarf_to_home && cd tmp_install_rainbarf_to_home
 
 git clone https://github.com/creaktive/rainbarf.git && cd rainbarf
