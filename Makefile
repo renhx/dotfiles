@@ -6,8 +6,14 @@ help:
 all: bash fish tmux vim git tig homebrew iterm alfred ruby
 
 bash:
-	ln -s -i ${DOTFILES}/.bash_profile ${HOME}/.bash_profile
-	ln -s -i ${DOTFILES}/.bashrc ${HOME}/.bashrc
+	if [ -f ${HOME}/.bashrc ]; then \
+		cp -f ${HOME}/.bashrc ${HOME}/.bashrc.dotfiles-original; \
+	fi
+	if [ -f ${HOME}/.bash_profile ]; then \
+		cp -f ${HOME}/.bash_profile ${HOME}/.bash_profile.dotfiles-original; \
+	fi
+	ln -s -f ${DOTFILES}/.bash_profile ${HOME}/.bash_profile
+	ln -s -f ${DOTFILES}/.bashrc ${HOME}/.bashrc
 
 bash-append:
 	echo "if [ -f ${DOTFILES}/.bash_profile ]; then . ${DOTFILES}/.bash_profile; fi" >> ~/.bash_profile
@@ -17,15 +23,15 @@ fish:
 	if [ ! -d ${HOME}/.config/fish/ ]; then \
 		mkdir -p ${HOME}/.config/fish/; \
 	fi
-	ln -s -i ${DOTFILES}/.config/fish/config.fish ${HOME}/.config/fish/config.fish
+	ln -s -f ${DOTFILES}/.config/fish/config.fish ${HOME}/.config/fish/config.fish
 	@echo "--------------------"
 	@echo "Run the following line"
 	@echo "echo '/usr/local/bin/fish' >> /etc/shells && chsh -s /usr/local/bin/fish"
 	@echo "--------------------"
 
 tmux:
-	ln -s -i ${DOTFILES}/.tmux.conf ${HOME}/.tmux.conf
-	ln -s -i ${DOTFILES}/.tmux-login-shell ${HOME}/.tmux-login-shell
+	ln -s -f ${DOTFILES}/.tmux.conf ${HOME}/.tmux.conf
+	ln -s -f ${DOTFILES}/.tmux-login-shell ${HOME}/.tmux-login-shell
 
 vim:
 	if [ ! -d ${HOME}/.vim/bundle/neobundle.vim/ ]; then \
@@ -33,17 +39,17 @@ vim:
 	fi
 	mkdir -p ${HOME}/.vim/undodir/
 	mkdir -p ${HOME}/.vim/dict/
-	ln -s -i ${DOTFILES}/.vimrc ${HOME}/.vimrc
+	ln -s -f ${DOTFILES}/.vimrc ${HOME}/.vimrc
 	vim +NeoBundleInit +qall
 
 xvim:
-	ln -s -i ${DOTFILES}/.xvimrc ${HOME}/.xvimrc
+	ln -s -f ${DOTFILES}/.xvimrc ${HOME}/.xvimrc
 
 git:
-	ln -s -i ${DOTFILES}/dot.gitignore ${HOME}/.gitignore
+	ln -s -f ${DOTFILES}/dot.gitignore ${HOME}/.gitignore
 
 tig:
-	ln -s -i ${DOTFILES}/.tigrc ${HOME}/.tigrc
+	ln -s -f ${DOTFILES}/.tigrc ${HOME}/.tigrc
 
 homebrew:
 	#ruby -e "$(curl -fsSL https://raw.github.com/Homebrew/homebrew/go/install)"
@@ -67,7 +73,7 @@ alfred:
 	@echo "~/Dropbox/Configs/AlfredSync/"
 
 ruby:
-	ln -s -i ${DOTFILES}/.gemrc ${HOME}/.gemrc
+	ln -s -f ${DOTFILES}/.gemrc ${HOME}/.gemrc
 
 # init mac
 #  xcode-select --install
