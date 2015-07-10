@@ -9,13 +9,18 @@ install:
 script:
   - vint .vimrc
   - make bash
+  - make zsh-append
   - make fish
   - make tmux
   - make vim
   - make xvim
   - make git
   - make tig
-  - make ruby
+  - make linuxbrew
+  - make anyenv
+  - make iterm
+  - make alfred
+  - make gem
   - cd scripts/
   - ./install_rainbarf_to_home.sh
   - ./install_tig_to_home.sh

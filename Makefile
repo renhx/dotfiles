@@ -40,13 +40,13 @@ tmux:
 	ln -s -f ${DOTFILES}/.tmux-login-shell ${HOME}/.tmux-login-shell
 
 vim:
-	if [ ! -d ${HOME}/.vim/bundle/neobundle.vim/ ]; then \
-		curl https://raw.githubusercontent.com/Shougo/neobundle.vim/master/bin/install.sh | sh; \
-	fi
+	ln -s -f ${DOTFILES}/.vimrc ${HOME}/.vimrc
 	mkdir -p ${HOME}/.vim/undodir/
 	mkdir -p ${HOME}/.vim/dict/
-	ln -s -f ${DOTFILES}/.vimrc ${HOME}/.vimrc
-	${HOME}/.vim/bundle/neobundle.vim/bin/neoinstall
+	if [ ! -d ${HOME}/.vim/bundle/neobundle.vim/ ]; then \
+		curl https://raw.githubusercontent.com/Shougo/neobundle.vim/master/bin/install.sh | sh; \
+		${HOME}/.vim/bundle/neobundle.vim/bin/neoinstall; \
+	fi
 
 xvim:
 	ln -s -f ${DOTFILES}/.xvimrc ${HOME}/.xvimrc
