@@ -1,9 +1,9 @@
 DOTFILES = $(shell pwd)
 
 help:
-	@echo "make [all, bash, bash-append, fish, tmux, vim, xvim, git, tig, homebrew, iterm, alfred, ruby]"
+	@echo "make [all, bash, bash-append, zsh-append, fish, tmux, vim, xvim, git, tig, homebrew, linuxbrew, anyenv, iterm, alfred, gem]"
 
-all: bash fish tmux vim git tig homebrew iterm alfred ruby
+all: bash zsh-append fish tmux vim git tig gem
 
 bash:
 	if [ -f ${HOME}/.bashrc ]; then \
@@ -18,6 +18,12 @@ bash:
 bash-append:
 	echo "if [ -f ${DOTFILES}/.bash_profile ]; then . ${DOTFILES}/.bash_profile; fi" >> ~/.bash_profile
 	echo "if [ -f ${DOTFILES}/.bashrc ]; then . ${DOTFILES}/.bashrc; fi" >> ~/.bash_profile
+
+zsh-append:
+	if [ -f ${HOME}/.zshrc ] && [ -f ${HOME}/.zshenv ]; then \
+		echo "if [ -f ${DOTFILES}/.bash_profile ]; then . ${DOTFILES}/.bash_profile; fi" >> ~/.zshenv; \
+		echo "if [ -f ${DOTFILES}/.bashrc ]; then . ${DOTFILES}/.bashrc; fi" >> ~/.zshrc; \
+	fi
 
 fish:
 	if [ ! -d ${HOME}/.config/fish/ ]; then \
@@ -52,7 +58,9 @@ tig:
 	ln -s -f ${DOTFILES}/.tigrc ${HOME}/.tigrc
 
 homebrew:
-	#ruby -e "$(curl -fsSL https://raw.github.com/Homebrew/homebrew/go/install)"
+	if [ ! `which brew` ]; then \
+		ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"; \
+	fi
 	./Brewfile.sh
 	
 	# ricty font
@@ -61,6 +69,22 @@ homebrew:
 	@echo "cp -f /PATH/TO/RICTY/fonts/Ricty*.ttf ~/Library/Fonts/"
 	@echo "fc-cache -vf"
 	@echo "--------------------"
+
+linuxbrew:
+	if [ ! -d ${HOME}/.linuxbrew/ ] && [ ! `which brew` ]; then \
+		curl -fsSL https://raw.githubusercontent.com/Homebrew/linuxbrew/go/install | ruby; \
+	fi
+	#Uninstall
+	#ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Linuxbrew/install/master/uninstall)"
+
+anyenv:
+	if [ ! -d ${HOME}/.anyenv/ ]; then \
+		git clone https://github.com/riywo/anyenv ~/.anyenv; \
+	fi
+	@echo '--------------------'
+	@echo 'Run the following lines'
+	@echo 'exec $SHELL -l'
+	@echo '--------------------'
 
 iterm:
 	@echo "iTerm2"
@@ -72,7 +96,7 @@ alfred:
 	@echo "Preferences -> Advanced -> Syncing"
 	@echo "~/Dropbox/Configs/AlfredSync/"
 
-ruby:
+gem:
 	ln -s -f ${DOTFILES}/.gemrc ${HOME}/.gemrc
 
 # init mac

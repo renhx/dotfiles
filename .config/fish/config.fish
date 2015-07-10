@@ -7,33 +7,67 @@ set fish_greeting "Welcome to fish "(printf (_ '%s><((°>%s') (set_color -o blue
 #------------------------------
 # PATH
 #------------------------------
+
+#--------------------
+# Homebrew
+#--------------------
 set -x PATH /usr/local/bin /usr/local/sbin $PATH
 
-set -x PATH /Applications/android-sdk-mac_x86/tools $PATH
-set -x PATH /Applications/android-sdk-mac_x86/platform-tools $PATH
-set -x PATH $HOME/.nodebrew/current/bin $PATH
-set -x PATH ~/.cabal/bin $PATH
-
-set -x PATH "$HOME/.pyenv/bin" $PATH
-if which pyenv >/dev/null 2>&1
-  . (pyenv init - | psub)
-  # status --is-interactive; and . (pyenv init -|psub)
-  # status --is-interactive; and . (pyenv virtualenv-init -|psub)
+#--------------------
+# Linuxbrew
+#--------------------
+if test -d $HOME/.linuxbrew/
+  set -x PATH $HOME/.linuxbrew/bin $PATH
+  set -x MANPATH $HOME/.linuxbrew/share/man $MANPATH
+  set -x INFOPATH $HOME/.linuxbrew/share/info $INFOPATH
+  set -x LD_LIBRARY_PATH $HOME/.linuxbrew/lib $LD_LIBRARY_PATH
 end
 
-set -x PATH $HOME/.rbenv/bin $PATH
-if which rbenv >/dev/null 2>&1
-  set -x PATH $HOME/.rbenv/shims $PATH
-  #. (rbenv init - | psub)
-  rbenv rehash >/dev/null ^&1
+#--------------------
+# ~/usr/local
+#--------------------
+if test -d $HOME/usr/local/
+  set -x PATH $HOME/usr/local/bin/ $PATH
+  set -x LD_LIBRARY_PATH $HOME/usr/local/lib/ $LD_LIBRARY_PATH
+end
+
+#--------------------
+# Langs
+#--------------------
+if test -d $HOME/.anyenv/
+  # anyenv
+  set -x PATH $HOME/.anyenv/bin $PATH
+  . (anyenv init - | psub)
+
+else
+  # anyenvへの移行中は各envの設定も残す🐱
+  if test -d $HOME/.pyenv/
+    # pyenv
+    set -x PATH "$HOME/.pyenv/bin" $PATH
+    . (pyenv init - | psub)
+  end
+
+  if test -d $HOME/.rbenv/
+    # rbenv
+    set -x PATH $HOME/.rbenv/bin $PATH
+    set -x PATH $HOME/.rbenv/shims $PATH
+    #. (rbenv init - | psub)
+    rbenv rehash >/dev/null ^&1
+  end
 end
 
 if which go >/dev/null 2>&1
   set -x GOPATH $HOME/go
 end
 
+set -x PATH /Applications/android-sdk-mac_x86/tools $PATH
+set -x PATH /Applications/android-sdk-mac_x86/platform-tools $PATH
+set -x PATH $HOME/.nodebrew/current/bin $PATH
+set -x PATH ~/.cabal/bin $PATH
+set -x MONO_GAC_PREFIX "/usr/local"
+
 #------------------------------
-# import from .bashrc
+# Aliases (import from .bashrc)
 #------------------------------
 alias l='ls'
 alias ll='ls -l'
@@ -91,14 +125,14 @@ end
 #------------------------------
 # KeyBindings
 #------------------------------
-function fish_user_keybindings
+# function fish_user_keybindings
   # eval fish_vi_key_bindings
   # #bind \cx 'ls'
 
   # #map C-s <Esc> #C-jが使えないので...
   # bind \cs -M insert -m default end-selection force-repaint
   # bind \cs -M visual -m default end-selection force-repaint
-end
+# end
 
 
 #------------------------------
