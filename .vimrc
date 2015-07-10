@@ -17,6 +17,9 @@
 "        :NeoBundleUpdate
 "        :NeoBundleClean
 
+" Note: Skip initialization for vim-tiny or vim-small.
+if 0 | endif
+
 if has('vim_starting')
   if &compatible
     set nocompatible
@@ -56,15 +59,15 @@ NeoBundle 'chriskempson/vim-tomorrow-theme'
 NeoBundle 'Shougo/neocomplete.vim'                 " 自動補完, lua必要
 NeoBundle 'Shougo/neosnippet.vim'
 NeoBundle 'Shougo/neosnippet-snippets'
-NeoBundle 'thinca/vim-quickrun'                    " 現在書いているコードを別タブで実行
+NeoBundle 'thinca/vim-quickrun'                    " 現在書いているコードを別タブで実行, <Space>q
 NeoBundle 'itchyny/lightline.vim'                  " ステータスラインを良い感じにする
-NeoBundle 'scrooloose/nerdtree'                    " ディレクトリツリーを固定表示
+NeoBundle 'scrooloose/nerdtree'                    " ディレクトリツリーを固定表示, <Space>n
 NeoBundle 'jistr/vim-nerdtree-tabs'                " 複数タブでのnerdtreeの同期
-NeoBundle 'Shougo/unite.vim'                       " 総合インタフェース, 最近開いたファイル一覧とかが見れる
-NeoBundle 'basyura/unite-rails'                    " Rails+Unite統合
+" NeoBundle 'Shougo/unite.vim'                       " 総合インタフェース, 最近開いたファイル一覧とかが見れる
+" NeoBundle 'basyura/unite-rails'                    " Rails+Unite統合
 NeoBundle 'YankRing.vim'                           " ヤンクの履歴を保存 TODO: yankroundを使用するように切り替える？
 NeoBundle 'mattn/sonictemplate-vim'                " ファイルタイプごとのテンプレートを複数設定
-NeoBundle 'terryma/vim-multiple-cursors'           " カーソル分身(sublimeライク)
+NeoBundle 'terryma/vim-multiple-cursors'           " カーソル分身(sublimeライク), C-n
 "NeoBundle 'koron/minimap-vim'                     " sublimeライクなminimap, gvimでないと動作しないようであるためコメントアウト
 "NeoBundle 'Shougo/vimshell.vim'                   " 
 NeoBundle 'vim-scripts/taglist.vim'                " TODO: tagbarの方が良さげ？
@@ -77,8 +80,8 @@ NeoBundle 'joeytwiddle/sexy_scroller.vim'          " よりスムーズなスク
 NeoBundle 'AndrewRadev/switch.vim'                 " true<->falseのようなword切り替え, <Space>-
 NeoBundle 'tpope/vim-rails'                        " 対応するMVC,test間の簡単移動など
 "NeoBundle 'vim-scripts/ruby-matchit'              " => source $VIMRUNTIME/macros/matchit.vim
-NeoBundle 'tpope/vim-fugitive'                     " git
-NeoBundle 'scrooloose/nerdcommenter'               " より良きコメントアウト, CTRL+?
+NeoBundle 'tpope/vim-fugitive'                     " Git wrapper
+NeoBundle 'scrooloose/nerdcommenter'               " より良きコメントアウト, C-?
 NeoBundle 'mattn/emmet-vim'                        " Emmet(zen-coding)
 NeoBundle 'scrooloose/syntastic'                   " 文法チェッカ
 NeoBundle 'pangloss/vim-javascript'
@@ -103,38 +106,38 @@ NeoBundle 'kannokanno/previm'                      " Realtime Markdown Preview
 NeoBundle 'rhysd/clever-f.vim'                     " f{chr}で行を跨いで移動&日本語対応&;は任意の記号 vim-easymotion or sneak.vim or clever-f.vim
 NeoBundle 'othree/javascript-libraries-syntax.vim' " local-vimrcと組み合わせ
 NeoBundle 'MarcWeber/vim-addon-local-vimrc'        " .local-vimrc, 特定ディレクトリ以下でのみ有効化したい.vimrcがある場合, js-lib-syntaxと組み合わせ
-NeoBundle 'kchmck/vim-coffee-script'
-NeoBundle 'toyamarinyon/vim-swift'
+NeoBundle 'kchmck/vim-coffee-script'               " CoffeeScript support for vim. Syntax, indenting, compiling, and more.
+NeoBundle 'toyamarinyon/vim-swift'                 " Adds Swift support to vim. It covers syntax, intenting, and more.
 NeoBundle 'mrocklin/maude.vim', {'rev' : '9e28f9'} " Maude-Lang, 9e28f9:ファイルタイプ判定付き
 NeoBundle 'nathanaelkane/vim-indent-guides'        " インデント可視化
 NeoBundle 'dag/vim-fish'                           " Fish Shell
-NeoBundle 'thinca/vim-fontzoom'
-NeoBundle 'zaiste/tmux.vim'
+NeoBundle 'thinca/vim-fontzoom'                    " gvim時に `:Fontzoom +10` みたいな感じでフォントサイズ変更
+NeoBundle 'zaiste/tmux.vim'                        " .tmux.conf syntax
 NeoBundle 'junegunn/vim-emoji'
 " NeoBundle 'sophacles/vim-processing'
 NeoBundle 'crazymaster/vim-processing', {'rev' : '45123b'}
 NeoBundle 'renhx/vim-arduino-syntax'
 NeoBundle 'jplaut/vim-arduino-ino'
 " NeoBundle 'vim-scripts/AnsiEsc.vim'
-NeoBundle 'hynek/vim-python-pep8-indent'
-NeoBundle 'mbbill/undotree'
-NeoBundle 'ctrlpvim/ctrlp.vim'
-NeoBundle 'tacahiroy/ctrlp-funky'
+NeoBundle 'hynek/vim-python-pep8-indent'           " 自動でPEP8なインデントにしてくれる
+NeoBundle 'mbbill/undotree'                        " <Space>u undotreeの表示, persistent_undoと組み合わせると便利
+NeoBundle 'ctrlpvim/ctrlp.vim'                     " <Space>p
+NeoBundle 'tacahiroy/ctrlp-funky'                  " <Space>PF 関数をctrlpっぽく検索できる
 " NeoBundle 'rhysd/vim-textobj-ruby'                 " r(Ruby Text Object): vir, cir, dir, dar, etc...
 NeoBundle 'kana/vim-textobj-user'
 NeoBundle 'nelstrom/vim-textobj-rubyblock'
-NeoBundle 'koron/codic-vim'
-NeoBundle 'cohama/agit.vim'
-NeoBundle 'rhysd/committia.vim'
-NeoBundle 'haya14busa/incsearch.vim'
+NeoBundle 'koron/codic-vim'                        " A plugin of http://codic.jp/ for Vim.
+NeoBundle 'cohama/agit.vim'                        " :Agit :AgitFile, A powerful Git log viewer.
+NeoBundle 'rhysd/committia.vim'                    " `git commit`からvimが起動した時、diffやstatusが表示されたリッチな画面になる
+NeoBundle 'haya14busa/incsearch.vim'               " 検索をリッチに, デフォの/を置き換え, 入力中にC-jC-kで画面外の次のマッチへ, Tab STabで次のマッチへ, 入力中の同時ハイライト(正規表現も)
 " NeoBundle 'mattn/webapi-vim'
 " NeoBundle 'mattn/excitetranslate-vim'
 " NeoBundle 'mattn/googletranslate-vim'
-NeoBundle 'ujihisa/neco-look'
-NeoBundle 'matze/vim-move'                           " 選択行を上下に移動(C-h, C-l)
+NeoBundle 'ujihisa/neco-look'                      " 英単語を補完, neocompleteとlookコマンド必要, デフォはmdとかで4字超えると出てくるっぽ
+NeoBundle 'matze/vim-move'                         " 選択行を上下に移動(V -> C-h, C-l)
 " NeoBundle 'skammer/vim-css-color'
-NeoBundle 'jeroenbourgois/vim-actionscript'
-NeoBundle 'fatih/vim-go'
+NeoBundle 'jeroenbourgois/vim-actionscript'        " Syntax file for actionscript
+NeoBundle 'fatih/vim-go'                           " Go (golang) support for Vim
 NeoBundleLazy 'dag/vim2hs', {'autoload': {'filetypes': ['haskell']}}
 NeoBundleLazy 'eagletmt/neco-ghc', {'autoload': {'filetypes': ['haskell']}}
 NeoBundleLazy 'renhx/ghcmod-vim', {'rev':'issue-66', 'autoload': {'filetypes': ['haskell']}}
