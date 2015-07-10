@@ -130,6 +130,7 @@ NeoBundle 'koron/codic-vim'                        " A plugin of http://codic.jp
 NeoBundle 'cohama/agit.vim'                        " :Agit :AgitFile, A powerful Git log viewer.
 NeoBundle 'rhysd/committia.vim'                    " `git commit`からvimが起動した時、diffやstatusが表示されたリッチな画面になる
 NeoBundle 'haya14busa/incsearch.vim'               " 検索をリッチに, デフォの/を置き換え, 入力中にC-jC-kで画面外の次のマッチへ, Tab STabで次のマッチへ, 入力中の同時ハイライト(正規表現も)
+" NeoBundle 'osyo-manga/vim-anzu'                    " 検索結果の数を表示してくれる, スクロール時にsexy_scrollerが効かないのでdisable
 " NeoBundle 'mattn/webapi-vim'
 " NeoBundle 'mattn/excitetranslate-vim'
 " NeoBundle 'mattn/googletranslate-vim'
@@ -143,6 +144,7 @@ NeoBundleLazy 'eagletmt/neco-ghc', {'autoload': {'filetypes': ['haskell']}}
 NeoBundleLazy 'renhx/ghcmod-vim', {'rev':'issue-66', 'autoload': {'filetypes': ['haskell']}}
 " NeoBundle 'moro/vim-review'
 NeoBundle 'orangain/vim-review', {'rev' : '17778f'}
+NeoBundle 'slim-template/vim-slim'
 
 call neobundle#end()
 NeoBundleCheck
@@ -974,6 +976,15 @@ let g:ctrlp_funky_syntax_highlight = 1
 map /  <Plug>(incsearch-forward)
 map ?  <Plug>(incsearch-backward)
 map g/ <Plug>(incsearch-stay)
+
+"------------------------------------------------
+" vim-anzu
+"------------------------------------------------
+" map   n <Plug>(incsearch-nohl-n)
+" map   N <Plug>(incsearch-nohl-N)
+" nmap  n <Plug>(incsearch-nohl)<Plug>(anzu-n-with-echo)
+" nmap  N <Plug>(incsearch-nohl)<Plug>(anzu-N-with-echo)
+" nmap <Esc><Esc> <Plug>(anzu-clear-search-status)
 
 "------------------------------------------------
 " googletranslate

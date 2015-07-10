@@ -63,7 +63,7 @@ brew install migemogrep
 brew tap uetchy/nlp
 
 #Pentest
-brew install sqlmap
+brew install sqlmap --HEAD
 brew install nmap
 brew install hping
 brew install dex2jar
