@@ -43,6 +43,7 @@ brew install git
 brew install tig
 brew install hub
 brew install gist
+brew cask install github-desktop
 brew install mercurial
 brew install tree
 brew install watch

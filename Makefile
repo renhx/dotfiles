@@ -1,7 +1,7 @@
 DOTFILES = $(shell pwd)
 
 help:
-	@echo "make [all, bash, bash-append, zsh-append, fish, tmux, vim, xvim, git, tig, homebrew, linuxbrew, anyenv, iterm, alfred, gem]"
+	@echo "make [all, bash, bash-append, zsh-append, fish, tmux, vim, xvim, git, tig, homebrew, linuxbrew, anyenv, iterm, alfred, gem, ghc]"
 
 all: bash zsh-append fish tmux vim git tig gem
 
@@ -98,6 +98,9 @@ alfred:
 
 gem:
 	ln -s -f ${DOTFILES}/.gemrc ${HOME}/.gemrc
+
+ghc:
+	ln -s -f ${DOTFILES}/.ghci ${HOME}/.ghci
 
 # init mac
 #  xcode-select --install

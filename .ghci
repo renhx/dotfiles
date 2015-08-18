@@ -1,0 +1,4 @@
+:set -O
+:set -Wall
+:set -Werror
+:set -fno-warn-type-defaults
