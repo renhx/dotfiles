@@ -4,3 +4,5 @@ cmdargs:
 policies:
   ProhibitSetNoCompatible:
     enabled: false
+  ProhibitImplicitScopeVariable:
+    enabled: false

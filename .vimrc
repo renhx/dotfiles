@@ -145,6 +145,7 @@ NeoBundleLazy 'renhx/ghcmod-vim', {'rev':'issue-66', 'autoload': {'filetypes': [
 " NeoBundle 'moro/vim-review'
 NeoBundle 'orangain/vim-review', {'rev' : '17778f'}
 NeoBundle 'slim-template/vim-slim'
+NeoBundle 'solarnz/thrift.vim'
 
 call neobundle#end()
 NeoBundleCheck
