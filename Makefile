@@ -79,9 +79,9 @@ linuxbrew:
 
 anyenv:
 	if [ ! -d ${HOME}/.anyenv/ ]; then \
-		git clone https://github.com/riywo/anyenv ~/.anyenv; \
-		mkdir -p $(anyenv root)/plugins; \
-		git clone https://github.com/znz/anyenv-update.git $(anyenv root)/plugins/anyenv-update; \
+		git clone https://github.com/riywo/anyenv ${HOME}/.anyenv; \
+		mkdir -p ${HOME}/.anyenv/plugins; \
+		git clone https://github.com/znz/anyenv-update.git ${HOME}/.anyenv/plugins/anyenv-update; \
 	fi
 	@echo '--------------------'
 	@echo 'Run the following lines'
