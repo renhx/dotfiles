@@ -69,7 +69,8 @@ brew install nmap
 brew install hping
 brew install dex2jar
 brew install apktool
-#procyon
+brew install procyon-decompiler
+brew cask install jd-gui
 brew install exiftool
 
 brew tap homebrew/binary
