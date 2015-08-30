@@ -126,14 +126,40 @@ end
 # KeyBindings
 #------------------------------
 # function fish_user_keybindings
+  # Vi Mode
   # eval fish_vi_key_bindings
   # #bind \cx 'ls'
-
   # #map C-s <Esc> #C-jが使えないので...
   # bind \cs -M insert -m default end-selection force-repaint
   # bind \cs -M visual -m default end-selection force-repaint
 # end
 
+function fish_user_key_bindings
+  bind \cr 'peco_select_history (commandline -b)'
+end
+
+#------------------------------
+# peco_select_history
+#------------------------------
+# plugin-peco
+# Copyright (c) 2014 Bruno Ferreira Pinto
+# Released under the MIT license
+# https://github.com/oh-my-fish/plugin-peco/blob/master/LICENSE
+function peco_select_history
+  if test (count $argv) = 0
+    set peco_flags --layout=bottom-up
+  else
+    set peco_flags --layout=bottom-up --query "$argv"
+  end
+
+  history|peco $peco_flags|read foo
+
+  if [ $foo ]
+    commandline $foo
+  else
+    commandline ''
+  end
+end
 
 #------------------------------
 # Prompt: デフォルトのClassic + Gitに、viのモード表示を追加したもの。
