@@ -146,6 +146,7 @@ NeoBundleLazy 'renhx/ghcmod-vim', {'rev':'issue-66', 'autoload': {'filetypes': [
 NeoBundle 'orangain/vim-review', {'rev' : '17778f'}
 NeoBundle 'slim-template/vim-slim'
 NeoBundle 'solarnz/thrift.vim'
+NeoBundle 'rking/ag.vim'                           " <Space>ag, <Space>agu, :Ag [options] {pattern} [{dir}], The Silver Searcher(再帰的検索,高速)
 
 call neobundle#end()
 NeoBundleCheck
@@ -874,7 +875,7 @@ noremap <Space>md :PrevimOpen<CR>
 " clever-f
 "------------------------------------------------
 let g:clever_f_smart_case = 1
-let g:clever_f_use_migemo = 1
+let g:clever_f_use_migemo = 0
 let g:clever_f_chars_match_any_signs = ';'
 
 "------------------------------------------------
@@ -1012,3 +1013,9 @@ let g:go_def_mapping_enabled = 0
 "------------------------------------------------
 " let g:haskell_conceal = 0
 " autocmd BufWritePost *.hs GhcModCheckAndLintAsync
+
+"------------------------------------------------
+" ag.vim
+"------------------------------------------------
+nnoremap <Space>ag :Ag 
+nnoremap <Space>agu :Ag -u 

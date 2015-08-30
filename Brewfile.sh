@@ -55,6 +55,7 @@ brew install ngrok
 brew install ino
 brew install ctags
 brew install heroku-toolbelt
+brew install the_silver_searcher #高速検索, `ag -a hoge ~/dotfiles/`, -uで全ファイル対象
 
 brew install cmigemo --HEAD
 brew tap peco/peco
