@@ -104,5 +104,11 @@ gem:
 ghc:
 	ln -s -f ${DOTFILES}/.ghci ${HOME}/.ghci
 
+peco:
+	if [ ! -d ${HOME}/.config/peco/ ]; then \
+		mkdir -p ${HOME}/.config/peco/; \
+	fi
+	ln -s -f ${DOTFILES}/.config/peco/config.json ${HOME}/.config/peco/config.json
+
 # init mac
 #  xcode-select --install

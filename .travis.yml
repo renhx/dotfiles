@@ -21,6 +21,8 @@ script:
   - make iterm
   - make alfred
   - make gem
+  - make ghc
+  - make peco
   - cd scripts/
   - ./install_rainbarf_to_home.sh
   - ./install_tig_to_home.sh
