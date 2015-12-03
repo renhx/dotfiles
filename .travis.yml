@@ -23,6 +23,7 @@ script:
   - make gem
   - make ghc
   - make peco
+  - make karabiner
   - cd scripts/
   - ./install_rainbarf_to_home.sh
   - ./install_tig_to_home.sh
