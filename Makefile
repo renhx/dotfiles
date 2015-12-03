@@ -1,7 +1,7 @@
 DOTFILES = $(shell pwd)
 
 help:
-	@echo "make [all, bash, bash-append, zsh-append, fish, tmux, vim, xvim, git, tig, homebrew, linuxbrew, anyenv, iterm, alfred, gem, ghc]"
+	@echo "make [all, bash, bash-append, zsh-append, fish, tmux, vim, xvim, git, tig, homebrew, linuxbrew, anyenv, iterm, alfred, gem, ghc, karabiner]"
 
 all: bash zsh-append fish tmux vim git tig gem
 
@@ -109,6 +109,17 @@ peco:
 		mkdir -p ${HOME}/.config/peco/; \
 	fi
 	ln -s -f ${DOTFILES}/.config/peco/config.json ${HOME}/.config/peco/config.json
+
+karabiner:
+	if [ -d ${HOME}/Library/Application\ Support/Karabiner/ ]; then \
+		ln -s -f ${DOTFILES}/karabiner-private.xml ${HOME}/Library/Application\ Support/Karabiner/private.xml; \
+	fi
+	@echo "--------------------"
+	@echo "Run the following commands"
+	@echo "./karabiner-us.sh"
+	@echo "or"
+	@echo "./karabiner-jis.sh"
+	@echo "--------------------"
 
 # init mac
 #  xcode-select --install
