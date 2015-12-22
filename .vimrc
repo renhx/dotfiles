@@ -147,6 +147,7 @@ NeoBundle 'orangain/vim-review', {'rev' : '17778f'}
 NeoBundle 'slim-template/vim-slim'
 NeoBundle 'solarnz/thrift.vim'
 NeoBundle 'rking/ag.vim'                           " <Space>ag, <Space>agu, :Ag [options] {pattern} [{dir}], The Silver Searcher(再帰的検索,高速)
+NeoBundle 'derekwyatt/vim-scala'
 
 call neobundle#end()
 NeoBundleCheck
@@ -330,8 +331,8 @@ nmap <silent> J <C-d>
 nmap <silent> K <C-u>
 
 "<space>j, <space>kで画面送り
-noremap <Space>j <C-f>
-noremap <Space>k <C-b>
+" noremap <Space>j <C-f>
+" noremap <Space>k <C-b>
 
 " Ex-modeでの<C-p><C-n>をzshのヒストリ補完っぽくする
 cnoremap <C-p> <Up>
