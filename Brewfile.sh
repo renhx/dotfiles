@@ -73,6 +73,8 @@ brew install apktool
 brew install procyon-decompiler
 brew cask install jd-gui
 brew install exiftool
+brew install sslyze
+brew install binwalk
 
 brew tap homebrew/binary
 brew install jad
