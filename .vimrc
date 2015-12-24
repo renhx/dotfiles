@@ -329,6 +329,8 @@ nnoremap <Space><Space> :<C-u>call append(expand('.'), '')<Cr>j
 "JKで上下半画面スクロール
 nmap <silent> J <C-d>
 nmap <silent> K <C-u>
+vmap <silent> J <C-d>
+vmap <silent> K <C-u>
 
 "<space>j, <space>kで画面送り
 " noremap <Space>j <C-f>
@@ -732,7 +734,7 @@ aug END
 let g:user_emmet_install_global = 0
 augroup emmet_install
   autocmd!
-  autocmd FileType html,css,php,eruby EmmetInstall
+  autocmd FileType html,xml,css,php,eruby EmmetInstall
 augroup END
 
 let g:user_emmet_leader_key = '<C-e>'
