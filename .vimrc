@@ -1,14 +1,4 @@
-" TODO:
-"   Nyanmode.vim ... orz
-"   テキスト整形系プラグイン
-"   yankround移行
-"   tagbar移行
-"   vim-ctrlspace
-"   ノーマルモード移行時にIMEを英数に切り替え?
-"   コンテキストに応じたfiletype (osyo-manga/vim-precious)
-"
-" Thanks: @alotofwe
-
+" Special Thanks: @alotofwe
 
 "------------------------------------------------
 " NeoBundle
