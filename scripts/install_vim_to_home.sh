@@ -9,9 +9,9 @@ fi
 mkdir tmp_install_vim_to_home && cd tmp_install_vim_to_home
 
 #install lua
-wget http://www.lua.org/ftp/lua-5.2.3.tar.gz
-tar xzf lua-5.2.3.tar.gz
-cd lua-5.2.3
+wget http://www.lua.org/ftp/lua-5.3.2.tar.gz
+tar xzf lua-5.3.2.tar.gz
+cd lua-5.3.2
 make linux && make install INSTALL_TOP=$HOME/usr/local
 if [ $? -ne 0 ]; then
     echo "Error: lua"; exit 1
@@ -19,7 +19,7 @@ fi
 cd ..
 
 #install vim
-git clone https://github.com/vim-jp/vim.git
+git clone --depth 1 https://github.com/vim-jp/vim.git
 cd vim
 LDFLAGS="-L$HOME/usr/local/lib/" ./configure --prefix=$HOME/usr/local --with-local-dir=$HOME/usr/local --with-features=huge --enable-multibyte --disable-darwin --disable-selinux --enable-pythoninterp --enable-luainterp=yes --with-lua-prefix=$HOME/usr/local --enable-cscope --enable-perlinterp --enable-fail-if-missing && make && make install
 if [ $? -ne 0 ]; then
