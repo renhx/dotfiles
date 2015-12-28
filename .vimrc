@@ -134,10 +134,11 @@ NeoBundleLazy 'eagletmt/neco-ghc', {'autoload': {'filetypes': ['haskell']}}
 NeoBundleLazy 'renhx/ghcmod-vim', {'rev':'issue-66', 'autoload': {'filetypes': ['haskell']}}
 " NeoBundle 'moro/vim-review'
 NeoBundle 'orangain/vim-review', {'rev' : '17778f'}
-NeoBundle 'slim-template/vim-slim'
+NeoBundle 'slim-template/vim-slim', {'autoload': {'filetypes': ['slim']}}
 NeoBundle 'solarnz/thrift.vim'
 NeoBundle 'rking/ag.vim'                           " <Space>ag, <Space>agu, :Ag [options] {pattern} [{dir}], The Silver Searcher(再帰的検索,高速)
 NeoBundle 'derekwyatt/vim-scala'
+" NeoBundle 'rhysd/open-pdf.vim'                     " PDFを開く (pdftotextに依存)
 
 call neobundle#end()
 NeoBundleCheck
@@ -239,6 +240,7 @@ augroup cch                                       " カレントウィンドウ�
   autocmd WinLeave * set nocursorline
   autocmd WinEnter,BufRead * set cursorline
 augroup END
+autocmd Filetype json setl conceallevel=0         " jsonの文字列リテラルが省略表示される問題の回避
 
 
 "------------------------------------------------
@@ -314,7 +316,10 @@ inoremap <C-j> <Esc>
 vnoremap <C-j> <Esc>
 
 " カーソル下にNORのまま空行挿入
-nnoremap <Space><Space> :<C-u>call append(expand('.'), '')<Cr>j
+nnoremap <Space><Space> :<C-u>call append(line('.'), '')<Cr>j
+nnoremap <Space>o :<C-u>call append(line('.'), '')<Cr>j
+nnoremap <Space>O :<C-u>call append(line('.')-1, '')<Cr>k
+" nnoremap <Space>O O<ESC>
 
 "JKで上下半画面スクロール
 nmap <silent> J <C-d>
@@ -362,8 +367,12 @@ imap <Space>; <ESC>A;
 nnoremap <silent> ,T :<C-u>Template
 nnoremap <silent> <Space>T :<C-u>Template
 
-" 現在開いているファイルのFull Pathを表示
-command! ShowFullPath echo expand('%:p')
+" 現在開いているファイルのFull Pathを表示 & コピー
+command! ShowPath echo expand('%:p')
+command! CopyPath call CopyPath()
+function! CopyPath()
+  let @+=expand('%:p')
+endfunction
 
 " 括弧などの自動補完 -> vim-smartinputへ移行
 "inoremap , ,<Space>
@@ -527,7 +536,7 @@ vmap <C-_> <Plug>NERDCommenterToggle
 "nnoremap <silent> ,n :<C-u>NERDTree<CR>
 map ,n <plug>NERDTreeTabsToggle<CR>
 map <Space>n <plug>NERDTreeTabsToggle<CR>
-let g:nerdtree_tabs_open_on_console_startup = 1
+let g:nerdtree_tabs_open_on_console_startup = 0
 let NERDTreeShowBookmarks=1
 "let NERDTreeMapOpenInTab='<ENTER>'
 
