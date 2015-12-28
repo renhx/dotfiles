@@ -120,6 +120,3 @@ karabiner:
 	@echo "or"
 	@echo "./karabiner-jis.sh"
 	@echo "--------------------"
-
-# init mac
-#  xcode-select --install
