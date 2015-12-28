@@ -38,7 +38,7 @@ cabal update
 cabal install happy
 cabal install ghc-mod
 
-#misc.
+#Development
 brew install git
 brew install tig
 brew install hub
@@ -56,6 +56,7 @@ brew install ino
 brew install ctags
 brew install heroku-toolbelt
 brew install the_silver_searcher #高速検索, `ag -a hoge ~/dotfiles/`, -uで全ファイル対象
+brew install prettyping
 
 brew install cmigemo --HEAD
 brew tap peco/peco
@@ -74,10 +75,37 @@ brew install procyon-decompiler
 brew cask install jd-gui
 brew install exiftool
 brew install sslyze
-brew install binwalk
+# brew install binwalk
+brew cask install 0xed
+# brew install hashpump
+# brew cask install wireshark #未検証
+# brew install john-jumbo
+# brew install pdfcrack
 
 brew tap homebrew/binary
 brew install jad
+
+#Misc
+brew install asciinema     # ターミナルの録画
+brew install imagemagick   # 画像ファイルの変換
+brew install ghostscript   # PDFファイルの変換
+brew install kindlegen     # opfやePubをkindleフォーマットに変換
+brew cask install send-to-kindle
+brew cask install licecap  # GIFアニメ作成
+brew cask install keycastr # キーストローク表示
+brew cask install inkscape # Illustratorの代替品
+
+#OSX Basic
+# brew cask install xquartz
+# brew cask instakk bettertouchtool
+# brew cask install alfred
+# brew cask install caffeine
+# brew cask install arduino
+# brew cask install dropbox
+# brew cask install iterm2
+# brew cask install virtualbox
+# brew cask install google-chrome
+# brew cask install google-japanese-ime
 
 #Teardown
 brew cleanup
