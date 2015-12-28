@@ -8,7 +8,7 @@ fi
 mkdir tmp_install_tmux_to_home && cd tmp_install_tmux_to_home
 
 #install libevent
-wget https://github.com/downloads/libevent/libevent/libevent-2.0.21-stable.tar.gz
+curl -O -L https://github.com/downloads/libevent/libevent/libevent-2.0.21-stable.tar.gz
 tar zxvf libevent-2.0.21-stable.tar.gz
 cd libevent-2.0.21-stable
 ./configure --prefix=$HOME/usr/local && make && make install
