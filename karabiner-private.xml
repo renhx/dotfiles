@@ -48,4 +48,92 @@
       KeyCode::J, ModifierFlag::CONTROL_L, KeyCode::JIS_EISUU
     </autogen>
   </item>
+
+  <!-- ===================================================================================== -->
+
+
+  <item>
+    <name>左右のCommandキー(⌘)二度押しを「英数/かな」として扱う</name>
+    <identifier>private.doublecmd2eisuukana</identifier>
+    <autogen>
+      __DoublePressModifier__
+      KeyCode::COMMAND_L,
+      KeyCode::COMMAND_L,
+      KeyCode::JIS_EISUU
+    </autogen>
+    <autogen>
+      __DoublePressModifier__
+      KeyCode::COMMAND_R,
+      KeyCode::COMMAND_R,
+      KeyCode::JIS_KANA
+    </autogen>
+  </item>
+
+
+  <!-- ===================================================================================== -->
+
+  <item>
+    <name>左右のShiftキー（⌘）を「英数／かな」としても使う</name>
+    <appendix>（左Shiftキーを英数キーにする）</appendix>
+    <appendix>（右Shiftキーをかなキーにする）</appendix>
+
+    <item>
+      <name>以下の中からいずれか一つを選択してください。</name>
+      <appendix>複数の設定を有効した場合、上にある設定のほうが優先されます。</appendix>
+    </item>
+
+    <item><name>──────────────────────────────</name></item>
+
+    <item>
+      <name>Shiftキーの動作を優先モード （★おすすめ）</name>
+      <appendix>（Shiftキーの空打ちで「英数／かな」）</appendix>
+      <appendix>（Shiftキーを押している間に他のキーを打つと通常のShiftキーとして動作）</appendix>
+      <identifier>remap.jis_shift2eisuukana_prefer_shift</identifier>
+      <autogen>__KeyOverlaidModifier__ KeyCode::SHIFT_L, KeyCode::SHIFT_L, KeyCode::JIS_EISUU</autogen>
+      <autogen>__KeyOverlaidModifier__ KeyCode::SHIFT_R, KeyCode::SHIFT_R, KeyCode::JIS_KANA</autogen>
+    </item>
+
+    <item><name>──────────────────────────────</name></item>
+
+    <item>
+      <name>Shiftキーの動作を優先モード（＋意図しないShiftキーを防止）</name>
+      <appendix>（Shiftキーの空打ちで「英数／かな」）</appendix>
+      <appendix>（Shiftキーを押している間に他のキーを打つと通常のShiftキーとして動作。</appendix>
+      <appendix>ただし、他のキーを離す前にShiftキーを離した場合は「英数／かな」として扱う。）</appendix>
+      <identifier>remap.japanese_shift2eisuukana_prefer_shift_v2</identifier>
+      <autogen>
+        __KeyOverlaidModifier__
+        KeyCode::SHIFT_L,
+        KeyCode::VK_CONFIG_SYNC_KEYDOWNUP_notsave_japanese_shift2eisuukana_prefer_shift_v2, ModifierFlag::SHIFT_L,
+        KeyCode::JIS_EISUU,
+      </autogen>
+      <autogen>
+        __KeyOverlaidModifier__
+        KeyCode::SHIFT_R,
+        KeyCode::VK_CONFIG_SYNC_KEYDOWNUP_notsave_japanese_shift2eisuukana_prefer_shift_v2, ModifierFlag::SHIFT_R,
+        KeyCode::JIS_KANA,
+      </autogen>
+    </item>
+    <item hidden="true">
+      <identifier vk_config="true">notsave.japanese_shift2eisuukana_prefer_shift_v2</identifier>
+      <autogen>__BlockUntilKeyUp__ KeyCode::SHIFT_L</autogen>
+      <autogen>__BlockUntilKeyUp__ KeyCode::SHIFT_R</autogen>
+    </item>
+
+    <item>
+      <name>──────────────────────────────</name>
+      <identifier vk_config="true">notsave.jis_shift2eisuukana_prefer_eisuukana</identifier>
+      <autogen>__ShowStatusMessage__ Command</autogen>
+    </item>
+    <item>
+      <name>英数／かなキーの動作を優先モード</name>
+      <appendix>（基本的に英数／かなキーとして動作させる）</appendix>
+      <appendix>（Shiftキーとして動作させるにはShiftキーを長押しする）</appendix>
+      <appendix>（長押しの時間はParametersタブのHolding Key to Key &gt; Holding Thresholdで指定します）</appendix>
+      <identifier>remap.jis_shift2eisuukana_prefer_eisuukana</identifier>
+      <autogen>__HoldingKeyToKey__ KeyCode::SHIFT_L, KeyCode::JIS_EISUU, KeyCode::VK_NONE, KeyCode::VK_CONFIG_SYNC_KEYDOWNUP_notsave_jis_shift2eisuukana_prefer_eisuukana, ModifierFlag::SHIFT_L</autogen>
+      <autogen>__HoldingKeyToKey__ KeyCode::SHIFT_R, KeyCode::JIS_KANA,  KeyCode::VK_NONE, KeyCode::VK_CONFIG_SYNC_KEYDOWNUP_notsave_jis_shift2eisuukana_prefer_eisuukana, ModifierFlag::SHIFT_R</autogen>
+    </item>
+  </item>
+
 </root>
