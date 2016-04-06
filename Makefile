@@ -38,6 +38,8 @@ fish:
 tmux:
 	ln -s -f ${DOTFILES}/.tmux.conf ${HOME}/.tmux.conf
 	ln -s -f ${DOTFILES}/.tmux-login-shell ${HOME}/.tmux-login-shell
+	ln -s -f ${DOTFILES}/.tmux-mouse-2.1.conf ${HOME}/.tmux-mouse-2.1.conf
+	ln -s -f ${DOTFILES}/.tmux-mouse-2.0.conf ${HOME}/.tmux-mouse-2.0.conf
 
 vim:
 	ln -s -f ${DOTFILES}/.vimrc ${HOME}/.vimrc
