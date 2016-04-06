@@ -81,6 +81,7 @@ brew cask install 0xed
 # brew cask install wireshark #未検証
 # brew install john-jumbo
 # brew install pdfcrack
+brew cask install ifunbox
 
 brew tap homebrew/binary
 brew install jad
@@ -94,6 +95,8 @@ brew cask install send-to-kindle
 brew cask install licecap  # GIFアニメ作成
 brew cask install keycastr # キーストローク表示
 brew cask install inkscape # Illustratorの代替品
+brew cask install soundnode # SoundCloud App for Mac
+brew cask install amazon-music
 
 #OSX Basic
 # brew cask install xquartz
