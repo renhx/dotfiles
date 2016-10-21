@@ -2,7 +2,8 @@
 
 #Setup
 brew update
-brew install caskroom/cask/brew-cask
+brew tap caskroom/cask
+# brew install caskroom/cask/brew-cask
 
 #Shell
 brew install coreutils
@@ -26,6 +27,7 @@ brew install ricty --vim-powerline
 # fc-cache -vf
 
 #Langs
+# brew cask install java
 brew install lua
 brew install luajit
 brew install go
@@ -37,6 +39,7 @@ brew install ghc cabal-install
 cabal update
 cabal install happy
 cabal install ghc-mod
+#sudo npm install -g vtop
 
 #Development
 brew install git
@@ -70,7 +73,7 @@ brew install sqlmap --HEAD
 brew install nmap
 brew install hping
 brew install dex2jar
-brew install apktool
+brew install apktool # brew cask install java
 brew install procyon-decompiler
 brew cask install jd-gui
 brew install exiftool
@@ -97,10 +100,13 @@ brew cask install keycastr # キーストローク表示
 brew cask install inkscape # Illustratorの代替品
 brew cask install soundnode # SoundCloud App for Mac
 brew cask install amazon-music
+brew cask install yubikey-personalization-gui
+brew cask install spotify
 
 #OSX Basic
 # brew cask install xquartz
-# brew cask instakk bettertouchtool
+# brew cask install bettertouchtool
+# brew cask install karabiner
 # brew cask install alfred
 # brew cask install caffeine
 # brew cask install arduino
@@ -109,6 +115,7 @@ brew cask install amazon-music
 # brew cask install virtualbox
 # brew cask install google-chrome
 # brew cask install google-japanese-ime
+brew cask install smoothmouse
 
 #Teardown
 brew cleanup
