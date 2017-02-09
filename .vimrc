@@ -859,6 +859,7 @@ let g:limelight_default_coefficient = 0.8
 " Markdown
 "------------------------------------------------
 let g:vim_markdown_folding_disabled=1
+let g:vim_markdown_conceal = 0
 " autocmd Filetype mkd nmap <Tab> <S-v>><ESC>
 " autocmd Filetype mkd nmap <S-Tab> <S-v><<ESC>
 " autocmd Filetype mkd imap <Tab> <ESC><S-v>><ESC>i
